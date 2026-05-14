@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "RSK TECHNOLOGY GROUP",
+  name: "RSK TECHNOLOGIES GROUP",
   tagline: "Ensuring You Succeed.",
   description:
     "We design, build, and operate modern digital products for teams that need reliability, speed, and clarity.",
