@@ -4,7 +4,7 @@ import ServicesPage from '@/app/services/page'
 // Mock next/link
 jest.mock('next/link', () => ({
   __esModule: true,
-  default: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  default: ({ href, children, ...props }: any) => <a href={href} {...props}>{children}</a>,
 }))
 
 // Mock framer-motion
@@ -15,7 +15,7 @@ jest.mock('@/components/motion/Reveal', () => ({
 describe('ServicesPage', () => {
   it('renders the services page', () => {
     render(<ServicesPage />)
-    expect(screen.getByText((content, element) => content.includes('Technology services that deliver results'))).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: /Technology services/ })).toBeInTheDocument()
   })
 
   it('renders service cards', () => {

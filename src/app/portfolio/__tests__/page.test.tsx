@@ -4,7 +4,7 @@ import PortfolioPage from '@/app/portfolio/page'
 // Mock next/link
 jest.mock('next/link', () => ({
   __esModule: true,
-  default: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  default: ({ href, children, ...props }: any) => <a href={href} {...props}>{children}</a>,
 }))
 
 // Mock next/image
@@ -21,7 +21,7 @@ jest.mock('@/components/motion/Reveal', () => ({
 describe('PortfolioPage', () => {
   it('renders the portfolio page', () => {
     render(<PortfolioPage />)
-    expect(screen.getByText((content, element) => content.includes('Projects that drive results'))).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 1, name: /Projects that/ })).toBeInTheDocument()
   })
 
   it('renders project cards', () => {

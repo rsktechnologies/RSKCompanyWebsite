@@ -47,8 +47,8 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email",
-    details: "hello@rsktechnologies.com",
-    href: "mailto:hello@rsktechnologies.com",
+    details: "rsktechgroup@gmail.com",
+    href: "mailto:rsktechgroup@gmail.com",
     description: "We respond within 24 hours",
   },
   {
@@ -76,8 +76,8 @@ const contactMethods = [
 
 const socialLinks = [
   { icon: LinkIcon, label: "LinkedIn", href: "#" },
-  { icon: X, label: "X (Twitter)", href: "#" },
-  { icon: Mail, label: "Email", href: "mailto:hello@rsktechnologies.com" },
+  { icon: X, label: "X (Twitter)", href: "https://x.com/rsktech_group1" },
+  { icon: Mail, label: "Email", href: "mailto:rsktechgroup@gmail.com" },
 ];
 
 export default function ContactPage() {
@@ -146,7 +146,7 @@ export default function ContactPage() {
                     name="email"
                     required
                     className="w-full rounded-xl border border-neutral-200 bg-white/80 px-4 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:border-[rgb(51,51,153)] focus:outline-none focus:ring-1 focus:ring-[rgb(51,51,153)]"
-                    placeholder="john@example.com"
+                    placeholder=""
                   />
                 </div>
                 <div>
