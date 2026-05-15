@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import {
   Clock,
-  Link,
+  Link as LinkIcon,
   Mail,
   MapPin,
   MessageSquare,
@@ -51,7 +51,7 @@ const contactMethods = [
 ];
 
 const socialLinks = [
-  { icon: Link, label: "LinkedIn", href: "#" },
+  { icon: LinkIcon, label: "LinkedIn", href: "#" },
   { icon: X, label: "X (Twitter)", href: "#" },
   { icon: Mail, label: "Email", href: "mailto:hello@rsktechnologies.com" },
 ];
