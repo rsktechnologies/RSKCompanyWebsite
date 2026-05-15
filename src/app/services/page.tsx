@@ -5,12 +5,9 @@ import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import {
   ArrowRight,
-  Cloud,
   Code2,
-  Database,
   Layers,
   Rocket,
-  Shield,
   Smartphone,
   Star,
   Zap,
@@ -24,37 +21,16 @@ export const metadata: Metadata = {
 const services = [
   {
     icon: Code2,
-    title: "Custom Software Development",
-    description: "Full-cycle development from concept to deployment. Scalable, maintainable, and built to last.",
-    features: ["React/Next.js", "Node.js/Python", "TypeScript", "API Development"],
-    color: "rgb(51,51,153)",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Architecture & DevOps",
-    description: "AWS, Azure, and GCP expertise. Infrastructure as code, CI/CD pipelines, and zero-downtime deployments.",
-    features: ["Kubernetes", "Terraform", "GitHub Actions", "Cloud Monitoring"],
+    title: "Web Development",
+    description: "Modern, responsive websites built with cutting-edge technologies. From landing pages to complex web applications.",
+    features: ["React/Next.js", "TypeScript", "Responsive Design", "SEO Optimization"],
     color: "rgb(51,51,153)",
   },
   {
     icon: Smartphone,
-    title: "Mobile App Development",
+    title: "App Development",
     description: "Native and cross-platform mobile experiences that users love. iOS, Android, and React Native.",
     features: ["React Native", "Flutter", "iOS Swift", "Android Kotlin"],
-    color: "rgb(51,51,153)",
-  },
-  {
-    icon: Database,
-    title: "Data Engineering & Analytics",
-    description: "Turn your data into actionable insights. Data pipelines, warehousing, and BI dashboards.",
-    features: ["ETL Pipelines", "Snowflake/BigQuery", "Tableau/PowerBI", "ML Integration"],
-    color: "rgb(51,51,153)",
-  },
-  {
-    icon: Shield,
-    title: "Cybersecurity & Compliance",
-    description: "Protect your business with enterprise-grade security. SOC2, GDPR, and ISO compliance ready.",
-    features: ["Penetration Testing", "Security Audits", "Compliance Automation", "Zero Trust"],
     color: "rgb(51,51,153)",
   },
   {
@@ -102,8 +78,8 @@ export default function ServicesPage() {
 
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl">
-              From custom development to cloud architecture, we provide end-to-end
-              technology solutions that help businesses scale, innovate, and compete.
+              From web development to mobile apps and MVPs, we build digital solutions
+              that help businesses scale, innovate, and compete.
             </p>
           </Reveal>
         </div>

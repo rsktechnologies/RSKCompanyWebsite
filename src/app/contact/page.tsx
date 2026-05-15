@@ -14,6 +14,30 @@ import {
   X,
 } from "lucide-react";
 
+async function sendMessage(formData: FormData) {
+  "use server";
+
+  const name = formData.get("name") as string;
+  const email = formData.get("email") as string;
+  const message = formData.get("message") as string;
+
+  // Here you would send the email
+  // For now, we'll just log it
+  console.log("New message from contact form:", { name, email, message });
+
+  // In production, use a service like SendGrid, Resend, or nodemailer
+  // Example with Resend:
+  // const resend = new Resend(process.env.RESEND_API_KEY);
+  // await resend.emails.send({
+  //   from: 'contact@yourdomain.com',
+  //   to: 'hello@rsktechnologies.com',
+  //   subject: `New contact form message from ${name}`,
+  //   html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Message:</strong> ${message}</p>`,
+  // });
+
+  // For demo, just log
+}
+
 export const metadata: Metadata = {
   title: "Contact | RSK Technologies Group",
   description: `Contact ${siteConfig.name}. Get in touch for a discovery call.`,
@@ -98,7 +122,7 @@ export default function ContactPage() {
           <Reveal>
             <div className="rounded-2xl border border-[rgb(51,51,153)]/12 bg-white/55 p-6 shadow-lg backdrop-blur-sm sm:p-8">
               <h2 className="mb-6 text-2xl font-semibold text-neutral-900">Send us a message</h2>
-              <form className="space-y-5">
+              <form action={sendMessage} className="space-y-5">
                 <div>
                   <label htmlFor="name" className="mb-1 block text-sm font-medium text-neutral-700">
                     Full name
@@ -107,6 +131,7 @@ export default function ContactPage() {
                     type="text"
                     id="name"
                     name="name"
+                    required
                     className="w-full rounded-xl border border-neutral-200 bg-white/80 px-4 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:border-[rgb(51,51,153)] focus:outline-none focus:ring-1 focus:ring-[rgb(51,51,153)]"
                     placeholder="John Doe"
                   />
@@ -119,6 +144,7 @@ export default function ContactPage() {
                     type="email"
                     id="email"
                     name="email"
+                    required
                     className="w-full rounded-xl border border-neutral-200 bg-white/80 px-4 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:border-[rgb(51,51,153)] focus:outline-none focus:ring-1 focus:ring-[rgb(51,51,153)]"
                     placeholder="john@example.com"
                   />
@@ -131,6 +157,7 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={4}
+                    required
                     className="w-full rounded-xl border border-neutral-200 bg-white/80 px-4 py-2.5 text-neutral-900 placeholder:text-neutral-400 focus:border-[rgb(51,51,153)] focus:outline-none focus:ring-1 focus:ring-[rgb(51,51,153)]"
                     placeholder="Tell us about your project..."
                   />
