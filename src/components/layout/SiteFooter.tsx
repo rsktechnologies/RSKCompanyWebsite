@@ -38,16 +38,17 @@ export function SiteFooter() {
             <p className="mt-4 max-w-md text-sm text-neutral-600">
               {siteConfig.description}
             </p>
-            <div className="mt-6 flex gap-4">
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(51,51,153)]/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[rgb(51,51,153)] hover:text-white"
-                >
-                  <social.icon className="h-4 w-4 text-[rgb(51,51,153)] transition-colors hover:text-white" />
-                </Link>
-              ))}
+                <div className="mt-6 flex gap-4">
+                  {socialLinks.map((social) => (
+                    <Link
+                      key={social.label}
+                      href={social.href}
+                      aria-label={social.label}
+                      className="flex h-8 w-8 items-center justify-center rounded-lg bg-[rgb(51,51,153)]/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[rgb(51,51,153)] hover:text-white"
+                    >
+                      <social.icon className="h-4 w-4 text-[rgb(51,51,153)] transition-colors hover:text-white" />
+                    </Link>
+                  ))}
             </div>
           </div>
 

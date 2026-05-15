@@ -207,6 +207,7 @@ export default function ContactPage() {
                     <Link
                       key={social.label}
                       href={social.href}
+                      aria-label={social.label}
                       className="flex h-10 w-10 items-center justify-center rounded-xl bg-[rgb(51,51,153)]/10 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[rgb(51,51,153)] hover:text-white"
                     >
                       <social.icon className="h-5 w-5 text-[rgb(51,51,153)] transition-colors group-hover:text-white" strokeWidth={1.5} />
