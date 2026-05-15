@@ -5,13 +5,13 @@ import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import {
   Clock,
-  Linkedin,
+  Link,
   Mail,
   MapPin,
   MessageSquare,
   Phone,
   Send,
-  Twitter,
+  X,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -51,8 +51,8 @@ const contactMethods = [
 ];
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
+  { icon: Link, label: "LinkedIn", href: "#" },
+  { icon: X, label: "X (Twitter)", href: "#" },
   { icon: Mail, label: "Email", href: "mailto:hello@rsktechnologies.com" },
 ];
 
