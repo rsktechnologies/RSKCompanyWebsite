@@ -42,28 +42,28 @@ const values = [
 
 const team = [
   {
-    name: "Richard S. Kato",
+    name: "DR RONALD",
     role: "Founder & CEO",
-    bio: "15 years shipping product at scale. Obsessed with the intersection of great engineering and business outcomes.",
-    initials: "RK",
+    bio: "",
+    initials: "",
   },
   {
-    name: "Sophia Nkosi",
-    role: "Head of Engineering",
-    bio: "Former principal engineer at two unicorns. Builds teams as carefully as she builds systems.",
-    initials: "SN",
+    name: "FORTUNATE",
+    role: "",
+    bio: "",
+    initials: "",
   },
   {
-    name: "Kwame Osei",
-    role: "Lead Cloud Architect",
-    bio: "AWS certified, Kubernetes-native, and allergic to runbooks longer than one page.",
-    initials: "KO",
+    name: "ARTHUR",
+    role: "",
+    bio: "",
+    initials: "",
   },
   {
-    name: "Amara Diallo",
-    role: "Product Strategist",
-    bio: "Translates fuzzy business goals into crisp roadmaps. Has never met a backlog she couldn't tame.",
-    initials: "AD",
+    name: "ASINGURA ROSE DESIRE",
+    role: "",
+    bio: "",
+    initials: "",
   },
 ];
 
