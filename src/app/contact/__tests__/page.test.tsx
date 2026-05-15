@@ -1,10 +1,11 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import ContactPage from "@/app/contact/page";
 
 // Mock next/link
 jest.mock("next/link", () => ({
   __esModule: true,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: ({ href, children, ...props }: any) => (
     <a href={href} {...props}>
       {children}
