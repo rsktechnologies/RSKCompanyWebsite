@@ -4,13 +4,15 @@ import PortfolioPage from '@/app/portfolio/page'
 // Mock next/link
 jest.mock('next/link', () => ({
   __esModule: true,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: ({ href, children, ...props }: any) => <a href={href} {...props}>{children}</a>,
 }))
 
 // Mock next/image
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  // eslint-disable-next-line @next/next/no-img-element
+  default: (props: Record<string, unknown>) => <img {...props} alt="" />,
 }))
 
 // Mock framer-motion

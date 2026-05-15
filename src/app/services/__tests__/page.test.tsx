@@ -4,6 +4,7 @@ import ServicesPage from '@/app/services/page'
 // Mock next/link
 jest.mock('next/link', () => ({
   __esModule: true,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   default: ({ href, children, ...props }: any) => <a href={href} {...props}>{children}</a>,
 }))
 
