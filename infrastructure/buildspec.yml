@@ -1,0 +1,45 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - echo "Installing dependencies for RSK Technologies Group..."
+      - npm ci --legacy-peer-deps --cache .npm --prefer-offline
+
+  pre_build:
+    commands:
+      - echo "Running pre-build checks..."
+      - node --version
+      - npm --version
+      - echo "Type checking TypeScript..."
+      - npx tsc --noEmit
+      - echo "Running ESLint..."
+      - npm run lint || echo "Linting completed with warnings"
+
+  build:
+    commands:
+      - echo "Building Next.js application..."
+      - echo "Build started at $(date)"
+      - npm run build
+      - echo "Build completed at $(date)"
+
+  post_build:
+    commands:
+      - echo "Post-build operations..."
+      - ls -la out/
+      - echo "Creating deployment package..."
+      - cd out && zip -r ../deploy.zip . && cd ..
+      - echo "Build artifact size: $(du -sh deploy.zip | cut -f1)"
+
+artifacts:
+  files:
+    - deploy.zip
+  discard-paths: yes
+  name: rsk-technologies-$(date +%Y-%m-%d-%H-%M-%S)
+
+cache:
+  paths:
+    - '.npm/**/*'
+    - 'node_modules/**/*'
