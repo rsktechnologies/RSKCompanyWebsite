@@ -125,7 +125,7 @@ jobs:
       - name: Verify deployment
         run: |
           echo " Production deployment complete!"
-          echo " Website: https://yourdomain.com"
+          echo " Website: https://rsktech.net"
 
   health-check:
     name: Health Check
