@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Code2, Smartphone, Rocket, Cloud, ShieldCheck, Palette,
-  Star, Layers, ArrowRight, Zap, CheckCircle2, MessageSquare,
+  Star, Layers, ArrowRight, Zap, MessageSquare,
   Database, Globe, ChevronRight, TrendingUp,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
+import { ServiceCard } from "@/components/services/serviceCard";
 
 export const metadata: Metadata = {
   title: "Services | RSK Technologies Group",
@@ -21,6 +22,7 @@ const services = [
     description: "Modern, responsive websites and web applications built with cutting-edge technologies. From marketing sites to complex SaaS platforms.",
     features: ["React / Next.js", "TypeScript", "Responsive Design", "SEO Optimization"],
     tag: "#Software",
+    image: "/services/web-development.png",  
   },
   {
     icon: Smartphone,
@@ -28,6 +30,7 @@ const services = [
     description: "Native and cross-platform mobile experiences that users love — built for iOS, Android, and everything in between.",
     features: ["React Native", "Flutter", "iOS Swift", "Android Kotlin"],
     tag: "#Mobile",
+    image: "/services/app-development.png",
   },
   {
     icon: Rocket,
@@ -35,6 +38,7 @@ const services = [
     description: "From idea to launch in weeks, not months. Perfect for founders ready to test the market and attract early investment.",
     features: ["Lean Methodology", "Rapid Prototyping", "Investor-Ready", "Iterative Launch"],
     tag: "#MVP",
+    image: "/services/mvp-startup.png",
   },
   {
     icon: Cloud,
@@ -42,6 +46,7 @@ const services = [
     description: "Scalable cloud infrastructure, CI/CD pipelines, and DevOps practices that keep your product reliable and fast.",
     features: ["AWS / GCP / Azure", "Docker & Kubernetes", "CI/CD Pipelines", "Monitoring"],
     tag: "#Cloud",
+    image: "/services/cloud-devops.png",
   },
   {
     icon: ShieldCheck,
@@ -49,6 +54,7 @@ const services = [
     description: "Protect your business and your users. Security audits, penetration testing, and hardening for modern digital products.",
     features: ["Penetration Testing", "Security Audits", "Compliance", "Threat Modelling"],
     tag: "#CyberSecurity",
+    image: "/services/cyber-security.png",
   },
   {
     icon: Palette,
@@ -56,6 +62,7 @@ const services = [
     description: "Interfaces people love using. Research-backed design systems and pixel-perfect execution from wireframe to production.",
     features: ["User Research", "Design Systems", "Figma Prototypes", "Usability Testing"],
     tag: "#Design",
+    image: "/services/ui-ux-design.png",
   },
 ];
 
@@ -108,31 +115,12 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services grid */}
+      {/* Services grid — uses ServiceCard (Client Component) */}
       <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={0.05 * i}>
-              <div className="group flex h-full flex-col rounded-2xl border border-[rgb(51,51,153)]/12 bg-white/55 p-6 shadow-lg backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[rgb(51,51,153)]/30 hover:shadow-xl">
-                <div className="mb-4 flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[rgb(51,51,153)]/10 ring-1 ring-[rgb(51,51,153)]/20 transition-colors group-hover:bg-[rgb(51,51,153)]/15">
-                    <service.icon className="h-6 w-6 text-[rgb(51,51,153)]" strokeWidth={1.5} />
-                  </div>
-                  <span className="rounded-full bg-[rgb(51,51,153)]/8 px-2.5 py-0.5 text-xs font-semibold text-[rgb(51,51,153)]">
-                    {service.tag}
-                  </span>
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-neutral-900">{service.title}</h3>
-                <p className="mb-5 text-sm leading-relaxed text-neutral-600">{service.description}</p>
-                <div className="mt-auto flex flex-wrap gap-2">
-                  {service.features.map((feature) => (
-                    <span key={feature} className="inline-flex items-center gap-1 rounded-full bg-[rgb(51,51,153)]/5 px-2.5 py-0.5 text-xs font-medium text-[rgb(51,51,153)] ring-1 ring-[rgb(51,51,153)]/10">
-                      <CheckCircle2 className="h-3 w-3" strokeWidth={2} />
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              <ServiceCard {...service} />
             </Reveal>
           ))}
         </div>
