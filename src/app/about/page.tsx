@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Award, Briefcase, Globe, Smile, Target, Zap, Shield, TrendingUp,
   Users, Lightbulb, Handshake, Heart, MessageSquare, ChevronRight, CheckCircle2,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
+import { TeamCard } from "@/components/team/TeamCard"; // ← adjust path to wherever you place TeamCard.tsx
 
 export const metadata: Metadata = {
   title: "About | RSK Technologies Group",
@@ -35,33 +35,33 @@ const culturalPrinciples = [
 ];
 
 const team = [
-  { 
-    name: "Dr. Ronald", 
-    role: "Founder & CEO", 
-    bio: "With over 15 years of diverse experience across technology, business, and science, Ronald brings a unique ability to bridge disciplines and innovate across industries. His career spans biology, dental surgery, business systems, and advanced technology. He has deep expertise in reverse engineering, server and database management, web design, and app development, building and optimizing systems that power businesses and digital platforms. His leadership combines technical mastery with strategic vision to drive growth and transformation. Beyond the boardroom and code editor, Ronald is passionate about rugby, enjoys time with his loyal dog Shadow, and dives into immersive video games for relaxation and inspiration — reflecting his belief in teamwork, creativity, and resilience.", 
+  {
+    name: "Dr. Ronald",
+    role: "Founder & CEO",
+    bio: "With 15+ years spanning technology, biology, dental surgery, and business systems, Ronald bridges disciplines to build digital products that scale. His leadership combines deep technical expertise with strategic vision — and he's as passionate about rugby as he is about great software.",
     initials: "DR",
-    image: "/team/Dr.jpeg"
+    image: "/team/Dr.png",
   },
-  { 
-    name: "Fortunate", 
-    role: "Lead Fullstack Developer", 
-    bio: "Experienced fullstack developer specializing in modern web technologies including React, Node.js, and database optimization. Passionate about building scalable applications that solve real-world problems for businesses across Africa.", 
+  {
+    name: "Fortunate",
+    role: "Lead Fullstack Developer",
+    bio: "Experienced fullstack developer specializing in modern web technologies including React, Node.js, and database optimization. Passionate about building scalable applications that solve real-world problems for businesses across Africa.",
     initials: "FO",
-    image: "/team/Fortune.jpeg"
+    image: "/team/Fortune.png",
   },
-  { 
-    name: "Arthur", 
-    role: "DevOps & Cloud Engineer", 
-    bio: "Cloud infrastructure expert with deep knowledge of AWS, CI/CD pipelines, and system architecture. Ensures our deployments are reliable, secure, and optimized for performance across all client projects.", 
+  {
+    name: "Arthur",
+    role: "DevOps & Cloud Engineer",
+    bio: "Cloud infrastructure expert with deep knowledge of AWS, CI/CD pipelines, and system architecture. Ensures our deployments are reliable, secure, and optimized for performance across all client projects.",
     initials: "AR",
-    image: "/team/arthur.jpg"
+    image: "/team/arthur.jpg",
   },
-  { 
-    name: "Asingura Rose Desire", 
-    role: "Mobile App & Fullstack Developer", 
-    bio: "Skilled mobile and fullstack developer with expertise in React Native, Flutter, and modern web technologies. Passionate about creating intuitive user experiences and robust backend systems that drive business growth and user engagement across diverse platforms.", 
+  {
+    name: "Asingura Rose Desire",
+    role: "Mobile App & Fullstack Developer",
+    bio: "Skilled mobile and fullstack developer with expertise in React Native, Flutter, and modern web technologies. Passionate about creating intuitive user experiences and robust backend systems that drive business growth.",
     initials: "RD",
-    image: "/team/Desire.png"
+    image: "/team/Desire.png",
   },
 ];
 
@@ -89,11 +89,11 @@ export default function AboutPage() {
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
-<p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl">
-  Founded in Uganda, RSK Technologies Group-SMC LTD was born out of a simple but powerful idea: businesses deserve smarter, faster, and more reliable digital solutions. We saw how organizations struggled to harness modern technology, and we set out to change that.{" "}
-  <br/><br/>
-  From our early days building websites and apps, we’ve expanded into AI systems, automation tools, and digital campaigns — helping companies streamline operations, amplify their online presence, and unlock new opportunities. What started as a local initiative has grown into a bold vision: to become a trusted technology partner across Africa and beyond.
-</p>
+            <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl">
+              Founded in Uganda, RSK Technologies Group-SMC LTD was born out of a simple but powerful idea: businesses deserve smarter, faster, and more reliable digital solutions. We saw how organizations struggled to harness modern technology, and we set out to change that.
+              <br /><br />
+              From our early days building websites and apps, we've expanded into AI systems, automation tools, and digital campaigns — helping companies streamline operations, amplify their online presence, and unlock new opportunities. What started as a local initiative has grown into a bold vision: to become a trusted technology partner across Africa and beyond.
+            </p>
           </Reveal>
           <Reveal delay={0.18}>
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -130,9 +130,9 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Target size={14} /> <span>Our mission</span>
             </div>
-<h2 className="mt-4 text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">
-  To design and deliver intelligent digital solutions — websites, apps, AI systems, and automation tools — that empower businesses to operate smarter, scale faster, and achieve measurable growth.
-</h2>
+            <h2 className="mt-4 text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">
+              To design and deliver intelligent digital solutions — websites, apps, AI systems, and automation tools — that empower businesses to operate smarter, scale faster, and achieve measurable growth.
+            </h2>
             <p className="mt-5 text-pretty text-base leading-relaxed text-neutral-700 sm:text-lg">
               {siteConfig.name} is a technology consultancy focused on bridging the gap between industry needs and cutting-edge solutions. We integrate seasoned professionals into real-world projects — a thriving community of innovators driving meaningful impact through technology.
             </p>
@@ -248,30 +248,12 @@ export default function AboutPage() {
             <p className="mt-3 max-w-xl text-base text-neutral-600">A small, senior team. No account managers, no handoffs — just the people who built the thing in the room when it matters.</p>
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-{team.map((member, i) => (
-               <Reveal key={member.name} delay={0.07 * i}>
-                 <div className="group flex flex-col rounded-2xl border border-[rgb(51,51,153)]/12 bg-white/55 p-6 shadow-lg backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[rgb(51,51,153)]/25 hover:shadow-xl">
-                   <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-xl bg-[rgb(51,51,153)]/10 ring-1 ring-[rgb(51,51,153)]/20 shadow-[0_8px_24px_-10px_rgba(51,51,153,0.45)] transition-all group-hover:shadow-[0_12px_30px_-12px_rgba(51,51,153,0.6)]">
-                     {member.image ? (
-                       <Image
-                         src={member.image}
-                         alt={`${member.name}'s photo`}
-                         width={200}
-                         height={200}
-                         className="object-cover"
-                       />
-                     ) : (
-                       <div className="flex h-20 w-20 items-center justify-center rounded-xl bg-[rgb(51,51,153)]/10 text-2xl font-semibold text-[rgb(51,51,153)] ring-1 ring-[rgb(51,51,153)]/20">
-                         {member.initials}
-                       </div>
-                     )}
-                   </div>
-                   <p className="text-base font-semibold text-neutral-900">{member.name}</p>
-                   <p className="mb-3 mt-0.5 text-xs font-medium uppercase tracking-wider text-[rgb(51,51,153)]">{member.role}</p>
-                   {member.bio && <p className="text-sm leading-relaxed text-neutral-600">{member.bio}</p>}
-                 </div>
-               </Reveal>
-             ))}
+            {team.map((member, i) => (
+              <Reveal key={member.name} delay={0.07 * i}>
+                {/* TeamCard is a Client Component — safe to use onError / useState here */}
+                <TeamCard {...member} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

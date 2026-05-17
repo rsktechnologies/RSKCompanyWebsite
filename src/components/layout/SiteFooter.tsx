@@ -60,7 +60,7 @@ const SocialIcon = ({ type }: { type: string }) => {
 };
 
 const renderSocialIcon = (icon: string | React.ElementType) => {
-  if (typeof icon === 'string') {
+  if (typeof icon === "string") {
     return <SocialIcon type={icon} />;
   }
   return React.createElement(icon, { className: "h-4 w-4", strokeWidth: 1.75 });
@@ -68,31 +68,39 @@ const renderSocialIcon = (icon: string | React.ElementType) => {
 
 export function SiteFooter() {
   return (
-    <footer className="relative mt-auto bg-[rgb(51,51,153)]/90 text-white">
-      {/* Top accent line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-[rgb(51,51,153)] to-transparent opacity-60" />
+    /*
+      Footer background: rgb(18, 18, 60) — a very dark indigo that is the natural
+      "shadow" of the brand blue rgb(51,51,153). It blends seamlessly with the brand
+      palette rather than clashing. Text contrast is excellent against this deep indigo.
+      Icons use a mid-indigo rgb(130,130,210) so they're visible but still on-brand.
+    */
+    <footer className="relative mt-auto text-white" style={{ backgroundColor: "rgb(14, 14, 50)" }}>
+
+      {/* Top accent — brand blue glow line */}
+      <div className="h-px bg-gradient-to-r from-transparent via-[rgb(51,51,153)] to-transparent opacity-80" />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
         {/* Main grid */}
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8 lg:py-20">
 
-          {/* Brand column — spans 2 on lg */}
+          {/* Brand column */}
           <div className="lg:col-span-2">
-            <LogoLink imageClassName="brightness-110" />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-400">
+            <LogoLink imageClassName="brightness-125" />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-indigo-200/60">
               {siteConfig.description} We are a senior-led team based in East Africa,
               shipping digital products for teams worldwide.
             </p>
 
-{/* Social icons */}
+            {/* Social icons */}
             <div className="mt-6 flex items-center gap-3">
               {social.map(({ label, href, icon }) => (
                 <Link
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-neutral-400 ring-1 ring-white/10 transition-all duration-200 hover:bg-[rgb(51,51,153)]/20 hover:text-white hover:ring-[rgb(51,51,153)]/40"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg text-indigo-300/60 ring-1 ring-indigo-400/20 transition-all duration-200 hover:bg-[rgb(51,51,153)]/40 hover:text-white hover:ring-[rgb(51,51,153)]/60"
+                  style={{ backgroundColor: "rgba(51,51,153,0.15)" }}
                 >
                   {renderSocialIcon(icon)}
                 </Link>
@@ -102,7 +110,7 @@ export function SiteFooter() {
 
           {/* Explore */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
               Explore
             </p>
             <ul className="space-y-2.5">
@@ -110,7 +118,7 @@ export function SiteFooter() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="group flex items-center gap-1.5 text-sm text-neutral-400 transition-colors hover:text-white"
+                    className="group flex items-center gap-1.5 text-sm text-indigo-200/60 transition-colors hover:text-white"
                   >
                     <span>{label}</span>
                     <ArrowUpRight className="h-3 w-3 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -122,7 +130,7 @@ export function SiteFooter() {
 
           {/* Services */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
               Services
             </p>
             <ul className="space-y-2.5">
@@ -130,9 +138,9 @@ export function SiteFooter() {
                 <li key={label}>
                   <Link
                     href="/services"
-                    className="group flex items-center gap-2 text-sm text-neutral-400 transition-colors hover:text-white"
+                    className="group flex items-center gap-2 text-sm text-indigo-200/60 transition-colors hover:text-white"
                   >
-                    <Icon className="h-3.5 w-3.5 shrink-0 text-[rgb(51,51,153)] opacity-70 group-hover:opacity-100" strokeWidth={1.75} />
+                    <Icon className="h-3.5 w-3.5 shrink-0 opacity-70 group-hover:opacity-100" style={{ color: "rgb(130,130,210)" }} strokeWidth={1.75} />
                     <span>{label}</span>
                   </Link>
                 </li>
@@ -142,7 +150,7 @@ export function SiteFooter() {
 
           {/* Get in touch */}
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
               Get in touch
             </p>
             <ul className="space-y-3">
@@ -150,9 +158,9 @@ export function SiteFooter() {
                 <li key={text}>
                   <Link
                     href={href}
-                    className="group flex items-start gap-2.5 text-sm text-neutral-400 transition-colors hover:text-white"
+                    className="group flex items-start gap-2.5 text-sm text-indigo-200/60 transition-colors hover:text-white"
                   >
-                    <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[rgb(51,51,153)] opacity-70 group-hover:opacity-100" strokeWidth={1.75} />
+                    <Icon className="mt-0.5 h-4 w-4 shrink-0 opacity-70 group-hover:opacity-100" style={{ color: "rgb(130,130,210)" }} strokeWidth={1.75} />
                     <span>{text}</span>
                   </Link>
                 </li>
@@ -160,23 +168,23 @@ export function SiteFooter() {
             </ul>
 
             {/* Location tag */}
-            <div className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1 text-xs text-neutral-500 ring-1 ring-white/10">
-              <span className="h-1.5 w-1.5 rounded-full bg-[rgb(51,51,153)]" />
+            <div className="mt-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs ring-1" style={{ backgroundColor: "rgba(51,51,153,0.2)", color: "rgb(160,160,220)", ringColor: "rgba(51,51,153,0.35)" }}>
+              <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "rgb(100,100,200)" }} />
               {siteConfig.name} · Kampala, Uganda
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/8 py-6 sm:flex-row">
-          <p className="text-xs text-neutral-600">
+        <div className="flex flex-col items-center justify-between gap-3 border-t py-6 sm:flex-row" style={{ borderColor: "rgba(51,51,153,0.25)" }}>
+          <p className="text-xs" style={{ color: "rgb(100,100,150)" }}>
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="/legal" className="text-xs text-neutral-600 transition-colors hover:text-neutral-400">
+            <Link href="/legal" className="text-xs transition-colors hover:text-indigo-200" style={{ color: "rgb(100,100,150)" }}>
               Privacy Policy
             </Link>
-            <Link href="/legal" className="text-xs text-neutral-600 transition-colors hover:text-neutral-400">
+            <Link href="/legal" className="text-xs transition-colors hover:text-indigo-200" style={{ color: "rgb(100,100,150)" }}>
               Terms of Service
             </Link>
           </div>
