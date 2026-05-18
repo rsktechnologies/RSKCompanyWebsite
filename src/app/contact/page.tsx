@@ -8,7 +8,6 @@ import {
   MapPin,
   MessageSquare,
   Clock,
-  Send,
   ChevronRight,
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
