@@ -108,13 +108,8 @@ export default function ContactPage() {
       {/* Contact cards */}
       <section className="border-y border-[rgb(51,51,153)]/10 bg-white/40 backdrop-blur-sm">
         <div className="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-y divide-[rgb(51,51,153)]/10 px-4 sm:px-6 lg:grid-cols-4 lg:divide-y-0 lg:px-8">
-          {contactCards.map((card, i) => (
             <Reveal key={card.title} delay={0.06 * i}>
               <Link
-                href={card.href}
-                className="group flex flex-col items-center gap-2 px-6 py-10 text-center transition-colors hover:bg-[rgb(51,51,153)]/4"
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[rgb(51,51,153)]/10 ring-1 ring-[rgb(51,51,153)]/20 transition-colors group-hover:bg-[rgb(51,51,153)]/15">
                   <card.icon className="h-5 w-5 text-[rgb(51,51,153)]" strokeWidth={1.5} />
                 </div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">{card.title}</p>
