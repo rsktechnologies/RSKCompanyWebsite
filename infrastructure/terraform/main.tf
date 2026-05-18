@@ -84,8 +84,8 @@ resource "aws_cloudfront_distribution" "frontend" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
   
-  # Uncomment and add your domain when ready
-  # aliases = ["yourdomain.com", "www.yourdomain.com"]
+
+ aliases = ["rsktech.net", "www.rsktech.net"]
   
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
