@@ -9,6 +9,30 @@ terraform {
   }
 }
 
+# ACM certificate for custom domain (must be in us-east-1 for CloudFront)
+resource "aws_acm_certificate" "frontend" {
+  provider          = aws.us_east_1
+  domain_name       = "rsktech.net"
+  validation_method = "DNS"
+
+  subject_alternative_names = ["www.rsktech.net"]
+
+  tags = {
+    Name        = "RSK Technologies Certificate"
+    Environment = "production"
+    Project     = "rsk-technologies-group"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+provider "aws" {
+  alias  = "us_east_1"
+  region = "us-east-1"
+}
+
 provider "aws" {
   region = "eu-north-1"
 }
@@ -115,7 +139,9 @@ resource "aws_cloudfront_distribution" "frontend" {
   }
   
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn      = aws_acm_certificate.frontend.arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
   
   custom_error_response {
