@@ -30,7 +30,7 @@ const services = [
     description:
       "Modern, responsive websites and web applications built with cutting-edge technologies. From marketing sites to complex SaaS platforms.",
     features: [
-      "React / Next.js",
+      "React/Next.js",
       "TypeScript",
       "Responsive Design",
       "SEO Optimization",

@@ -53,28 +53,28 @@ const SocialIcon = ({ type }: { type: string }) => {
 const contactCards = [
   {
     icon: Mail,
-    title: "Email us",
+    title: "Email",
     value: "hello@rsktechnologies.com",
     href: "mailto:hello@rsktechnologies.com",
     sub: "We reply within 24 hours",
   },
   {
     icon: Phone,
-    title: "Call us",
+    title: "Phone",
     value: "+256 762 536 576",
     href: "tel:+256762536576",
     sub: "Mon – Fri, 8 am – 6 pm EAT",
   },
   {
     icon: MapPin,
-    title: "Visit us",
+    title: "Office",
     value: "Kampala, Uganda",
     href: "#",
     sub: "East Africa Time (UTC+3)",
   },
   {
     icon: Clock,
-    title: "Support hours",
+    title: "Support Hours",
     value: "24 / 7",
     href: "#",
     sub: "For active project clients",

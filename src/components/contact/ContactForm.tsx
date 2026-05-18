@@ -26,8 +26,7 @@ export function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const firstName = String(data.get("firstName") ?? "").trim();
-    const lastName  = String(data.get("lastName")  ?? "").trim();
+    const name      = String(data.get("name")      ?? "").trim();
     const email     = String(data.get("email")     ?? "").trim();
     const company   = String(data.get("company")   ?? "").trim();
     const service   = String(data.get("service")   ?? "").trim();
@@ -45,9 +44,9 @@ export function ContactForm() {
         if (!res.ok) throw new Error("Server error");
       } else {
         // Fallback: open mail client
-        const subject = encodeURIComponent(`Contact from ${firstName} ${lastName}`);
+        const subject = encodeURIComponent(`Contact from ${name}`);
         const body = encodeURIComponent(
-          `Name: ${firstName} ${lastName}\nEmail: ${email}\nCompany: ${company}\nService: ${service}\n\n${message}`
+          `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nService: ${service}\n\n${message}`
         );
         window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
       }
@@ -65,32 +64,18 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
 
-      {/* Name row */}
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label htmlFor="firstName" className={labelClass}>First name</label>
-          <input
-            id="firstName"
-            name="firstName"
-            type="text"
-            required
-            disabled={isSubmitting}
-            placeholder="Ronald"
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName" className={labelClass}>Last name</label>
-          <input
-            id="lastName"
-            name="lastName"
-            type="text"
-            required
-            disabled={isSubmitting}
-            placeholder="Kato"
-            className={inputClass}
-          />
-        </div>
+      {/* Full name */}
+      <div>
+        <label htmlFor="name" className={labelClass}>Full name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          disabled={isSubmitting}
+          placeholder="John Doe"
+          className={inputClass}
+        />
       </div>
 
       {/* Email */}
@@ -142,7 +127,7 @@ export function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className={labelClass}>Message</label>
+        <label htmlFor="message" className={labelClass}>How can we help</label>
         <textarea
           id="message"
           name="message"

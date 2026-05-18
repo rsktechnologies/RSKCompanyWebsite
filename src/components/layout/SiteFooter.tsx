@@ -18,14 +18,17 @@ import { siteConfig } from "@/config/site";
 
 const explore = [
   { label: "Home", href: "/" },
-  { label: "About us", href: "/about" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
   { label: "Legal", href: "/legal" },
 ];
 
 const services = [
   { label: "Web Development", icon: Code2 },
+  { label: "App Development", icon: Code2 },
+  { label: "MVP Development", icon: Code2 },
   { label: "Cloud & DevOps", icon: Cpu },
   { label: "Cyber Security", icon: Shield },
   { label: "UI / UX Design", icon: Palette },
