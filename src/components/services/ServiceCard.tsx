@@ -2,10 +2,30 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { CheckCircle2, type LucideIcon } from "lucide-react";
+import {
+  CheckCircle2,
+  Code2,
+  Smartphone,
+  Rocket,
+  Cloud,
+  ShieldCheck,
+  Palette,
+} from "lucide-react";
+
+// Map string keys to icon components — all resolved CLIENT-SIDE, nothing crosses the server boundary
+const iconMap = {
+  Code2,
+  Smartphone,
+  Rocket,
+  Cloud,
+  ShieldCheck,
+  Palette,
+} as const;
+
+type IconKey = keyof typeof iconMap;
 
 interface ServiceCardProps {
-  icon: LucideIcon;
+  iconName: IconKey;
   title: string;
   description: string;
   features: string[];
@@ -13,13 +33,20 @@ interface ServiceCardProps {
   image: string;
 }
 
-export function ServiceCard({ icon: Icon, title, description, features, tag, image }: ServiceCardProps) {
+export function ServiceCard({
+  iconName,
+  title,
+  description,
+  features,
+  tag,
+  image,
+}: ServiceCardProps) {
   const [imgError, setImgError] = useState(false);
+  const Icon = iconMap[iconName];
 
   return (
     <div className="group flex h-full flex-col rounded-2xl border border-[rgb(51,51,153)]/12 bg-white/55 shadow-lg backdrop-blur-sm transition-all duration-200 hover:-translate-y-1 hover:border-[rgb(51,51,153)]/30 hover:shadow-xl overflow-hidden">
-
-      {/* IMAGE AREA — full width, fixed height, with icon + tag overlaid */}
+      {/* IMAGE AREA */}
       <div className="relative w-full h-48 flex-shrink-0 bg-[rgb(51,51,153)]/8">
         {!imgError ? (
           <Image
@@ -30,9 +57,11 @@ export function ServiceCard({ icon: Icon, title, description, features, tag, ima
             onError={() => setImgError(true)}
           />
         ) : (
-          /* Fallback gradient if image is missing */
           <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[rgb(51,51,153)]/15 to-[rgb(51,51,153)]/5">
-            <Icon className="h-16 w-16 text-[rgb(51,51,153)]/30" strokeWidth={1} />
+            <Icon
+              className="h-16 w-16 text-[rgb(51,51,153)]/30"
+              strokeWidth={1}
+            />
           </div>
         )}
 
@@ -50,9 +79,10 @@ export function ServiceCard({ icon: Icon, title, description, features, tag, ima
       {/* Card text content */}
       <div className="flex flex-col flex-1 p-6">
         <h3 className="mb-2 text-lg font-semibold text-neutral-900">{title}</h3>
-        <p className="mb-5 text-sm leading-relaxed text-neutral-600">{description}</p>
+        <p className="mb-5 text-sm leading-relaxed text-neutral-600">
+          {description}
+        </p>
 
-        {/* Feature pills */}
         <div className="mt-auto flex flex-wrap gap-2">
           {features.map((feature) => (
             <span
