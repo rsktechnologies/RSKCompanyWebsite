@@ -171,7 +171,7 @@ export function SiteFooter() {
             </ul>
 
             {/* Location tag */}
-            <div className="mt-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs ring-1" style={{ backgroundColor: "rgba(51,51,153,0.2)", color: "rgb(160,160,220)", ringColor: "rgba(51,51,153,0.35)" }}>
+            <div className="mt-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs ring-1 ring-[rgb(51,51,153)]/35" style={{ backgroundColor: "rgba(51,51,153,0.2)", color: "rgb(160,160,220)" }}>
               <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "rgb(100,100,200)" }} />
               {siteConfig.name} · Kampala, Uganda
             </div>
