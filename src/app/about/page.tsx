@@ -54,7 +54,7 @@ const team = [
     role: "DevOps & Cloud Engineer",
     bio: "Cloud infrastructure expert with deep knowledge of AWS, CI/CD pipelines, and system architecture. Ensures our deployments are reliable, secure, and optimized for performance across all client projects.",
     initials: "AR",
-    image: "/team/arthur.jpg",
+    image: "/team/Arthur.png",
   },
   {
     name: "Asingura Rose Desire",
