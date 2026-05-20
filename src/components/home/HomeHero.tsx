@@ -44,7 +44,7 @@ export function HomeHero() {
           >
             {siteConfig.description}{" "}
             <span className="font-medium text-[rgb(51,51,153)]">
-              Tell us what you want to build — we'll help you bring it live.
+              Tell us what you want to build &mdash; we&apos;ll help you bring it live.
             </span>
           </motion.p>
 
