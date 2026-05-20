@@ -24,7 +24,7 @@ export function HomeHero() {
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
-            For product & engineering leaders
+            For tech, product & engineering teams
           </motion.p>
 
           <motion.h1
@@ -44,7 +44,7 @@ export function HomeHero() {
           >
             {siteConfig.description}{" "}
             <span className="font-medium text-[rgb(51,51,153)]">
-              Tell us what you are shipping next—we will help you get it live.
+              Tell us what you want to build — we'll help you bring it live.
             </span>
           </motion.p>
 
@@ -75,8 +75,8 @@ export function HomeHero() {
             transition={{ duration: 0.5, delay: 0.28 }}
           >
             {[
-              "What we do: product engineering & cloud delivery",
-              "Who it is for: teams that need velocity without chaos",
+              "What we do: product engineering & cloud infrastructure",
+              "Who it is for: tech teams that need velocity without chaos",
               "How to buy: book a call, align on scope, start the sprint",
             ].map((item) => (
               <li
@@ -147,7 +147,7 @@ export function HomeHero() {
             </div>
 
             <div className="pointer-events-none absolute inset-x-8 bottom-8 rounded-2xl border border-white/50 bg-gradient-to-t from-white/80 to-transparent p-4 text-sm text-neutral-800 shadow-[0_-20px_60px_-40px_rgba(51,51,153,0.65)] backdrop-blur">
-              <p className="font-medium text-[rgb(51,51,153)]">Ship with confidence</p>
+              <p className="font-medium text-[rgb(51,51,153)]">Build with confidence</p>
               <p className="mt-1 text-neutral-700">
                 A calm, senior-led team that pairs strategy with execution—so your roadmap
                 becomes reality.

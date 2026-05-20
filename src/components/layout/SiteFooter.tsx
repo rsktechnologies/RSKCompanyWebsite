@@ -38,12 +38,12 @@ const social = [
   { label: "GitHub", href: "https://github.com/rsktechnologies", icon: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/rsk-technologies-group", icon: "linkedin" },
   { label: "Instagram", href: "https://www.instagram.com/rsktech_group1", icon: "instagram" },
-  { label: "WhatsApp", href: "https://wa.me/2567625365365", icon: MessageCircle },
+  { label: "WhatsApp", href: "https://wa.me/256762536576", icon: MessageCircle },
 ];
 
 const contact = [
   { icon: Mail, text: "hello@rsktechnologies.com", href: "mailto:hello@rsktechnologies.com" },
-  { icon: Phone, text: "+256 700 000 000", href: "tel:+256700000000" },
+  { icon: Phone, text: "+256 762 536 576", href: "tel:+256762536576" },
   { icon: MapPin, text: "Kampala, Uganda", href: "#" },
 ];
 
@@ -92,7 +92,7 @@ export function SiteFooter() {
             <LogoLink imageClassName="brightness-125" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-indigo-200/60">
               {siteConfig.description} We are a senior-led team based in East Africa,
-              shipping digital products for teams worldwide.
+              building digital products for teams worldwide.
             </p>
 
             {/* Social icons */}
