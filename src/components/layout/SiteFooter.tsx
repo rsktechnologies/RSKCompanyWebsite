@@ -42,7 +42,7 @@ const social = [
 ];
 
 const contact = [
-  { icon: Mail, text: "hello@rsktechnologies.com", href: "mailto:hello@rsktechnologies.com" },
+  { icon: Mail, text: "rsktechgroup@gmail.com", href: "mailto:rsktechgroup@gmail.com" },
   { icon: Phone, text: "+256 762 536 576", href: "tel:+256762536576" },
   { icon: MapPin, text: "Kampala, Uganda", href: "#" },
 ];

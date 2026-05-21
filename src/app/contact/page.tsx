@@ -53,8 +53,8 @@ const contactCards = [
   {
     icon: Mail,
     title: "Email",
-    value: "hello@rsktechnologies.com",
-    href: "mailto:hello@rsktechnologies.com",
+    value: "rsktechgroup@gmail.com",
+    href: "mailto:rsktechgroup@gmail.com",
     sub: "We reply within 24 hours",
   },
   {

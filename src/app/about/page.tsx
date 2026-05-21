@@ -244,7 +244,7 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Users size={14} /> <span>The team</span>
             </div>
-            <h2 className="mt-4 max-w-xl text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">People you'll actually work with.</h2>
+            <h2 className="mt-4 max-w-xl text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">Meet the people behind the work.</h2>
             <p className="mt-3 max-w-xl text-base text-neutral-600">A small, senior team. No account managers, no handoffs — just the people who built the thing in the room when it matters.</p>
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
