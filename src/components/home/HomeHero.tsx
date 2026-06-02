@@ -1,3 +1,4 @@
+// src/components/home/HomeHero.tsx
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
@@ -16,8 +17,8 @@ export function HomeHero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.12),transparent_55%)]" />
       </div>
 
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-24">
-        <div className="space-y-7">
+      <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:gap-10 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-24">
+        <div className="space-y-5 sm:space-y-7">
           <motion.p
             className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[rgb(51,51,153)] shadow-sm backdrop-blur"
             initial={reduce ? false : { opacity: 0, y: 10 }}
@@ -28,7 +29,7 @@ export function HomeHero() {
           </motion.p>
 
           <motion.h1
-            className="text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl"
+            className="text-balance text-3xl font-semibold leading-[1.1] tracking-tight text-neutral-900 sm:text-5xl lg:text-6xl"
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
@@ -37,7 +38,7 @@ export function HomeHero() {
           </motion.h1>
 
           <motion.p
-            className="max-w-xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl"
+            className="max-w-xl text-pretty text-base leading-relaxed text-neutral-700 sm:text-xl"
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
@@ -56,20 +57,20 @@ export function HomeHero() {
           >
             <Link
               href={siteConfig.primaryCta.href}
-              className="inline-flex h-12 items-center justify-center rounded-full border-0 bg-[rgb(51,51,153)] px-7 text-sm font-semibold text-white shadow-[0_18px_45px_-22px_rgba(51,51,153,0.95)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[rgb(41,41,128)] hover:shadow-[0_22px_55px_-24px_rgba(51,51,153,1)]"
+              className="inline-flex h-11 sm:h-12 items-center justify-center rounded-full border-0 bg-[rgb(51,51,153)] px-6 sm:px-7 text-sm font-semibold text-white shadow-[0_18px_45px_-22px_rgba(51,51,153,0.95)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[rgb(41,41,128)] hover:shadow-[0_22px_55px_-24px_rgba(51,51,153,1)]"
             >
               {siteConfig.primaryCta.label}
             </Link>
             <Link
               href={siteConfig.secondaryCta.href}
-              className="inline-flex h-12 items-center justify-center rounded-full border border-[rgb(51,51,153)]/35 bg-transparent px-7 text-sm font-semibold text-[rgb(51,51,153)] transition-colors hover:bg-[rgb(51,51,153)]/10"
+              className="inline-flex h-11 sm:h-12 items-center justify-center rounded-full border border-[rgb(51,51,153)]/35 bg-transparent px-6 sm:px-7 text-sm font-semibold text-[rgb(51,51,153)] transition-colors hover:bg-[rgb(51,51,153)]/10"
             >
               {siteConfig.secondaryCta.label}
             </Link>
           </motion.div>
 
           <motion.ul
-            className="grid gap-3 pt-2 text-sm text-neutral-700 sm:grid-cols-3"
+            className="grid gap-3 pt-2 text-sm text-neutral-700 grid-cols-1 sm:grid-cols-3"
             initial={reduce ? false : { opacity: 0 }}
             animate={reduce ? undefined : { opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.28 }}
@@ -89,13 +90,15 @@ export function HomeHero() {
           </motion.ul>
         </div>
 
+        {/* right column unchanged */}
         <motion.div
-          className="relative mx-auto w-full max-w-lg perspective-[1200px] lg:mx-0 lg:max-w-none"
+          className="relative mx-auto w-full max-w-sm perspective-[1200px] lg:mx-0 lg:max-w-none"
           initial={reduce ? false : { opacity: 0, rotateY: -10, x: 24 }}
           animate={reduce ? undefined : { opacity: 1, rotateY: 0, x: 0 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
           style={{ transformStyle: "preserve-3d" }}
         >
+          {/* same inner content */}
           <motion.div
             className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.75rem] bg-white/60 shadow-[0_30px_80px_-40px_rgba(51,51,153,0.85)] ring-1 ring-[rgb(51,51,153)]/20 backdrop-blur-md"
             whileHover={
