@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import { ArrowRight, ExternalLink, Play } from "lucide-react";
+import { PageHeroVisual } from "@/components/layout/PageHeroVisual";
 
 export const metadata: Metadata = {
   title: "Portfolio | RSK Technologies Group",
@@ -48,7 +49,7 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.10),transparent_55%)]" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <div className="relative mx-auto max-w-[1600px] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/70 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <ExternalLink size={14} />
@@ -67,10 +68,12 @@ export default function PortfolioPage() {
               Screenshots, live links, and product demos from platforms we have built across finance, operations, inventory, and custom business workflows.
             </p>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="portfolio" />
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
+      <section className="mx-auto max-w-[1600px] px-5 py-20 sm:px-8 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-2">
           {projects.map((project, i) => (
             <Reveal key={project.title} delay={0.05 * i}>
@@ -158,7 +161,7 @@ export default function PortfolioPage() {
       </section>
 
       <section className="border-t border-[rgb(51,51,153)]/10">
-        <div className="relative isolate mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <div className="relative isolate mx-auto max-w-[1600px] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
           <Reveal>
             <div className="relative overflow-hidden rounded-2xl border border-[rgb(51,51,153)]/15 bg-white/70 px-8 py-12 text-center shadow-xl backdrop-blur-md sm:px-16 sm:py-16">
               <div className="absolute inset-0 bg-gradient-to-br from-[rgb(51,51,153)]/8 via-transparent to-emerald-400/10" />
@@ -181,8 +184,14 @@ export default function PortfolioPage() {
               </div>
             </div>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="portfolio" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
+

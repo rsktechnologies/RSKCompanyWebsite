@@ -4,7 +4,14 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Activity, ArrowUpRight, Cpu, Layers3, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/config/site";
+
+const signals = [
+  { label: "Launch", value: "MVPs", icon: Layers3 },
+  { label: "Secure", value: "Cloud", icon: ShieldCheck },
+  { label: "Automate", value: "AI", icon: Cpu },
+];
 
 export function HomeHero() {
   const reduce = useReducedMotion();
@@ -12,28 +19,29 @@ export function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(51,51,153,0.12),transparent_35%,rgba(16,185,129,0.08)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.72),transparent_28%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(51,51,153,0.16),transparent_34%,rgba(22,160,133,0.10)_100%)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgb(51,51,153)]/30 to-transparent" />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 sm:py-18 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:gap-14 lg:px-10 lg:py-24">
-        <div className="space-y-5 sm:space-y-7">
+      <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 py-12 sm:px-8 sm:py-18 lg:grid-cols-[1fr_0.98fr] lg:items-center lg:gap-16 lg:px-10 lg:py-24">
+        <div className="space-y-6 sm:space-y-8">
           <motion.p
-            className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/70 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[rgb(51,51,153)] shadow-sm backdrop-blur"
+            className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/75 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[rgb(51,51,153)] shadow-sm backdrop-blur"
             initial={reduce ? false : { opacity: 0, y: 10 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
           >
+            <Activity size={14} />
             For tech, product & engineering teams
           </motion.p>
 
           <motion.h1
-            className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-neutral-900 sm:text-5xl lg:text-7xl"
+            className="max-w-5xl text-balance text-4xl font-semibold leading-[1.03] tracking-tight text-neutral-950 sm:text-6xl lg:text-7xl xl:text-8xl"
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
           >
-            {siteConfig.tagline}
+            Technology solutions tailored to your business needs.
           </motion.h1>
 
           <motion.p
@@ -43,8 +51,8 @@ export function HomeHero() {
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
           >
             {siteConfig.description} {" "}
-            <span className="font-medium text-[rgb(51,51,153)]">
-              Tell us what you want to build and we'll help you bring it live.
+            <span className="font-semibold text-[rgb(51,51,153)]">
+              Tell us what you want to build and we&apos;ll help you bring it live.
             </span>
           </motion.p>
 
@@ -56,100 +64,90 @@ export function HomeHero() {
           >
             <Link
               href={siteConfig.primaryCta.href}
-              className="inline-flex h-12 items-center justify-center rounded-full border-0 bg-[rgb(51,51,153)] px-7 text-sm font-semibold text-white shadow-[0_18px_45px_-22px_rgba(51,51,153,0.95)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[rgb(41,41,128)] hover:shadow-[0_22px_55px_-24px_rgba(51,51,153,1)]"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full border-0 bg-[rgb(51,51,153)] px-7 text-sm font-semibold text-white shadow-[0_18px_45px_-22px_rgba(51,51,153,0.95)] transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[rgb(41,41,128)] hover:shadow-[0_22px_55px_-24px_rgba(51,51,153,1)]"
             >
               {siteConfig.primaryCta.label}
+              <ArrowUpRight size={16} />
             </Link>
             <Link
               href={siteConfig.secondaryCta.href}
-              className="inline-flex h-12 items-center justify-center rounded-full border border-[rgb(51,51,153)]/35 bg-white/50 px-7 text-sm font-semibold text-[rgb(51,51,153)] transition-colors hover:bg-[rgb(51,51,153)]/10"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-[rgb(51,51,153)]/35 bg-white/60 px-7 text-sm font-semibold text-[rgb(51,51,153)] transition-colors hover:bg-[rgb(51,51,153)]/10"
             >
               {siteConfig.secondaryCta.label}
             </Link>
           </motion.div>
 
-          <motion.ul
-            className="grid gap-3 pt-2 text-sm text-neutral-700 sm:grid-cols-3"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={reduce ? undefined : { opacity: 1 }}
+          <motion.div
+            className="grid gap-3 pt-1 sm:grid-cols-3"
+            initial={reduce ? false : { opacity: 0, y: 12 }}
+            animate={reduce ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.28 }}
           >
-            {[
-              "What we do: product engineering & cloud infrastructure",
-              "Who it is for: tech teams that need velocity without chaos",
-              "How to buy: book a call, align on scope, start the sprint",
-            ].map((item) => (
-              <li
-                key={item}
-                className="rounded-xl border border-[rgb(51,51,153)]/12 bg-white/65 p-3 shadow-[0_12px_40px_-34px_rgba(51,51,153,0.9)] backdrop-blur-sm transition-transform duration-200 hover:-translate-y-0.5"
+            {signals.map((item, index) => (
+              <div
+                key={item.label}
+                className="tech-glass rounded-xl p-4 transition-transform duration-300 hover:-translate-y-1"
+                style={{ animationDelay: `${index * 0.3}s` }}
               >
-                {item}
-              </li>
+                <item.icon className="mb-3 h-5 w-5 text-[rgb(51,51,153)]" strokeWidth={1.7} />
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-neutral-500">{item.label}</p>
+                <p className="mt-1 text-xl font-semibold text-neutral-950">{item.value}</p>
+              </div>
             ))}
-          </motion.ul>
+          </motion.div>
         </div>
 
         <motion.div
-          className="relative mx-auto w-full max-w-md perspective-[1200px] lg:mx-0 lg:max-w-none"
+          className="relative mx-auto w-full max-w-xl perspective-[1200px] lg:mx-0 lg:max-w-none"
           initial={reduce ? false : { opacity: 0, rotateY: -10, x: 24 }}
           animate={reduce ? undefined : { opacity: 1, rotateY: 0, x: 0 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
           style={{ transformStyle: "preserve-3d" }}
         >
           <motion.div
-            className="relative min-h-[27rem] overflow-hidden rounded-[1.75rem] bg-white/70 shadow-[0_30px_80px_-40px_rgba(51,51,153,0.85)] ring-1 ring-[rgb(51,51,153)]/20 backdrop-blur-md sm:aspect-[4/3] sm:min-h-0"
-            whileHover={
-              reduce
-                ? undefined
-                : {
-                    rotateX: 4,
-                    rotateY: -6,
-                    scale: 1.02,
-                    transition: { type: "spring", stiffness: 260, damping: 22 },
-                  }
-            }
+            className="tech-glass tech-scan relative min-h-[31rem] overflow-hidden rounded-[1.75rem] sm:aspect-[5/4] sm:min-h-0"
+            whileHover={reduce ? undefined : { rotateX: 3, rotateY: -5, scale: 1.015 }}
+            transition={{ type: "spring", stiffness: 260, damping: 22 }}
             style={{ transformStyle: "preserve-3d" }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[rgb(51,51,153)]/16 via-transparent to-emerald-400/10" />
-            <div className="absolute inset-x-5 top-5 flex items-center justify-between rounded-2xl bg-white/78 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-[rgb(51,51,153)] shadow-inner backdrop-blur sm:inset-x-6 sm:top-6">
-              <span>Hero spotlight</span>
-              <span className="rounded-full bg-[rgb(51,51,153)]/10 px-2 py-0.5 text-[10px] text-neutral-700">
-                RSK Technologies
+            <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(51,51,153,0.16),transparent_42%,rgba(22,160,133,0.12))]" />
+            <div className="absolute inset-x-5 top-5 z-10 flex items-center justify-between rounded-2xl bg-white/82 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-[rgb(51,51,153)] shadow-inner backdrop-blur sm:inset-x-6 sm:top-6">
+              <span>RSK command center</span>
+              <span className="rounded-full bg-emerald-500/12 px-2 py-0.5 text-[10px] text-emerald-700">
+                Live systems
               </span>
             </div>
 
-            <div className="absolute inset-x-0 top-20 flex justify-center px-8 sm:top-24">
-              <div className="relative h-52 w-52 sm:h-64 sm:w-64 lg:h-72 lg:w-72">
-                <div className="absolute inset-3 rounded-3xl bg-[rgb(51,51,153)]/12 blur-2xl" />
+            <div className="absolute inset-x-0 top-[5.9rem] z-0 flex justify-center px-8 sm:top-[6.4rem]">
+              <div className="relative h-56 w-56 sm:h-72 sm:w-72 lg:h-80 lg:w-80">
+                <div className="tech-ring absolute inset-0 rounded-full border border-[rgb(51,51,153)]/18" />
+                <div className="tech-ring absolute inset-8 rounded-full border border-emerald-500/18 [animation-delay:0.8s]" />
                 <motion.div
-                  className="relative h-full w-full overflow-hidden rounded-3xl bg-white ring-2 ring-white/80 shadow-[0_24px_60px_-30px_rgba(51,51,153,0.95)]"
-                  animate={
-                    reduce
-                      ? undefined
-                      : { y: [0, -6, 0], rotateZ: [0, 0.6, 0] }
-                  }
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+                  className="tech-float relative mx-auto flex h-full w-full items-center justify-center overflow-hidden rounded-[2rem] bg-white shadow-[0_28px_70px_-32px_rgba(51,51,153,0.95)] ring-2 ring-white/90"
+                  animate={reduce ? undefined : { y: [0, -6, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <Image
                     src="/brand/logo.jpeg"
                     alt={`${siteConfig.name} logo`}
                     fill
-                    className="object-contain p-4"
-                    sizes="(min-width: 1024px) 320px, 70vw"
+                    className="object-contain p-5"
+                    sizes="(min-width: 1024px) 360px, 78vw"
                     priority
                   />
                 </motion.div>
               </div>
             </div>
 
-            <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/65 bg-white/82 p-4 text-sm text-neutral-800 shadow-[0_-20px_60px_-40px_rgba(51,51,153,0.65)] backdrop-blur sm:inset-x-8 sm:bottom-8">
-              <p className="font-medium text-[rgb(51,51,153)]">Build with confidence</p>
+            <div className="absolute bottom-28 left-5 z-10 rounded-2xl border border-white/70 bg-white/86 p-4 shadow-[0_20px_55px_-35px_rgba(51,51,153,0.9)] backdrop-blur sm:left-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-neutral-500">Delivery signal</p>
+              <p className="mt-1 text-2xl font-semibold text-[rgb(51,51,153)]">99%</p>
+            </div>
+
+            <div className="absolute bottom-5 right-5 z-10 max-w-[18rem] rounded-2xl border border-white/65 bg-white/86 p-4 text-sm text-neutral-800 shadow-[0_-20px_60px_-40px_rgba(51,51,153,0.65)] backdrop-blur sm:bottom-8 sm:right-8">
+              <p className="font-semibold text-[rgb(51,51,153)]">Build with confidence</p>
               <p className="mt-1 text-neutral-700">
-                A calm, senior-led team that pairs strategy with execution so your roadmap becomes reality.
+                Senior-led engineering for websites, apps, AI systems, and automation.
               </p>
             </div>
           </motion.div>
@@ -158,3 +156,4 @@ export function HomeHero() {
     </section>
   );
 }
+

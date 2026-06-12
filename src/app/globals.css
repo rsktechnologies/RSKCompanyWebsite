@@ -1,10 +1,12 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
   --background: #f4f1e8;
   --foreground: #171717;
   --brand: rgb(51, 51, 153);
   --brand-deep: rgb(41, 41, 128);
+  --mint: #16a085;
+  --ink: #101014;
 }
 
 @theme inline {
@@ -13,18 +15,25 @@
   --font-sans: var(--font-space-grotesk);
 }
 
-/* DaisyUI (Tailwind v4): after `npm i -D daisyui`, add the line below and use `btn`, `skeleton`, etc.
-@import "tailwindcss";
-@plugin "daisyui";
-*/
-
 @keyframes ui-shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@keyframes tech-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-110%); opacity: 0; }
+  20%, 80% { opacity: 0.55; }
+  100% { transform: translateY(110%); opacity: 0; }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { opacity: 0.34; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.035); }
 }
 
 .ui-skeleton {
@@ -39,12 +48,46 @@
   animation: ui-shimmer 1.35s ease-in-out infinite;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
+  min-width: 320px;
+  background:
+    linear-gradient(rgba(51, 51, 153, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51, 51, 153, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 12% 0%, rgba(51, 51, 153, 0.16), transparent 31rem),
+    radial-gradient(circle at 88% 12%, rgba(22, 160, 133, 0.12), transparent 28rem),
+    var(--background);
+  background-size: 54px 54px, 54px 54px, auto, auto, auto;
   color: var(--foreground);
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(51, 51, 153, 0.18);
+  color: var(--brand-deep);
+}
+
+.tech-glass {
+  border: 1px solid rgba(51, 51, 153, 0.14);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 30px 90px -55px rgba(51, 51, 153, 0.95);
+  backdrop-filter: blur(18px);
+}
+
+.tech-scan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(51, 51, 153, 0.13), transparent);
+  animation: scan-line 5.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.tech-float {
+  animation: tech-drift 7s ease-in-out infinite;
+}
+
+.tech-ring {
+  animation: pulse-ring 5s ease-in-out infinite;
 }

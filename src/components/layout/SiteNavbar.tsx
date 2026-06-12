@@ -12,6 +12,7 @@ export function SiteNavbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(false);
   }, [pathname]);
 
@@ -26,7 +27,7 @@ export function SiteNavbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[rgb(51,51,153)]/10 bg-[#f4f1e8]/88 backdrop-blur-xl supports-[backdrop-filter]:bg-[#f4f1e8]/72">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto flex h-20 max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-10">
         <LogoLink priority={pathname === "/"} />
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
@@ -92,7 +93,7 @@ export function SiteNavbar() {
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="border-t border-[rgb(51,51,153)]/10 bg-[#f4f1e8]/95 backdrop-blur-xl md:hidden"
           >
-            <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-3 sm:px-8">
+            <nav className="mx-auto flex max-w-[1600px] flex-col gap-1 px-5 py-3 sm:px-8">
               {navLinks.map((link, i) => {
                 const active = pathname === link.href;
                 return (
@@ -122,3 +123,5 @@ export function SiteNavbar() {
     </header>
   );
 }
+
+

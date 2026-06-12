@@ -13,6 +13,7 @@ import {
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { PageHeroVisual } from "@/components/layout/PageHeroVisual";
 
 export const metadata: Metadata = {
   title: "Contact | RSK Technologies Group",
@@ -130,7 +131,8 @@ export default function ContactPage() {
           <div className="absolute -right-16 top-24 h-64 w-64 rounded-full bg-[rgb(51,51,153)]/12 blur-3xl" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.10),transparent_55%)]" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.86fr] lg:items-center lg:px-10">
+          <div>
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <MessageSquare size={14} />
@@ -149,12 +151,14 @@ export default function ContactPage() {
               we're the right fit â€” and if we are, we'll get started fast.
             </p>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="contact" />
         </div>
       </section>
 
       {/* Contact info strip */}
       <section className="border-y border-[rgb(51,51,153)]/10 bg-white/40 backdrop-blur-sm">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-[rgb(51,51,153)]/10 px-4 sm:px-6 lg:grid-cols-4 lg:divide-y-0 lg:px-8">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-2 divide-x divide-y divide-[rgb(51,51,153)]/10 px-4 sm:px-6 lg:grid-cols-4 lg:divide-y-0 lg:px-8">
           {contactCards.map((card, i) => (
             <Reveal key={card.title} delay={0.06 * i}>
               <Link
@@ -181,7 +185,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + sidebar */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Form â€” 2/3 width â€” uses ContactForm client component */}
           <Reveal className="lg:col-span-2">
@@ -265,11 +269,17 @@ export default function ContactPage() {
               </div>
             </div>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="contact" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
+
 
 
 

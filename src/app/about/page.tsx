@@ -8,6 +8,7 @@ import {
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import { TeamCard } from "@/components/team/TeamCard"; // â† adjust path to wherever you place TeamCard.tsx
+import { PageHeroVisual } from "@/components/layout/PageHeroVisual";
 
 export const metadata: Metadata = {
   title: "About | RSK Technologies Group",
@@ -76,7 +77,8 @@ export default function AboutPage() {
           <div className="absolute -right-16 top-24 h-64 w-64 rounded-full bg-[rgb(51,51,153)]/12 blur-3xl" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.10),transparent_55%)]" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.86fr] lg:items-center lg:px-10">
+          <div>
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Users size={14} />
@@ -105,12 +107,14 @@ export default function AboutPage() {
               </Link>
             </div>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="about" />
         </div>
       </section>
 
       {/* Stats strip */}
       <section className="border-y border-[rgb(51,51,153)]/10 bg-white/40 backdrop-blur-sm">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-[rgb(51,51,153)]/10 px-4 sm:px-6 lg:grid-cols-4 lg:divide-y-0 lg:px-8">
+        <div className="mx-auto grid max-w-[1600px] grid-cols-2 divide-x divide-y divide-[rgb(51,51,153)]/10 px-4 sm:px-6 lg:grid-cols-4 lg:divide-y-0 lg:px-8">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={0.06 * i}>
               <div className="flex flex-col items-center gap-2 px-6 py-10 text-center">
@@ -124,7 +128,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-20">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
@@ -172,6 +176,8 @@ export default function AboutPage() {
               </div>
             </div>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="about" />
         </div>
       </section>
 
@@ -187,12 +193,14 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 text-sm font-semibold uppercase tracking-widest text-white/50">â€” Dr. Ronald, Founder & CEO</p>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="about" />
         </div>
       </section>
 
       {/* Values */}
       <section className="border-t border-[rgb(51,51,153)]/10 bg-white/30 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Lightbulb size={14} /> <span>Our values</span>
@@ -217,7 +225,7 @@ export default function AboutPage() {
       </section>
 
       {/* Cultural Principles */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
         <Reveal>
           <h2 className="text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">Our cultural principles.</h2>
           <p className="mt-3 max-w-xl text-base text-neutral-600">The way we show up for each other shapes how we show up for you.</p>
@@ -239,7 +247,7 @@ export default function AboutPage() {
 
       {/* Team */}
       <section className="border-t border-[rgb(51,51,153)]/10 bg-white/30 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Users size={14} /> <span>The team</span>
@@ -260,7 +268,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="border-t border-[rgb(51,51,153)]/10">
-        <div className="relative isolate mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative isolate mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(51,51,153,0.10),transparent_60%)]" />
           </div>
@@ -283,9 +291,15 @@ export default function AboutPage() {
               </div>
             </div>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="about" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
+
 

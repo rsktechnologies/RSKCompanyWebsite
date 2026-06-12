@@ -82,7 +82,7 @@ export function SiteFooter() {
       {/* Top accent â€” brand blue glow line */}
       <div className="h-px bg-gradient-to-r from-transparent via-[rgb(51,51,153)] to-transparent opacity-80" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
 
         {/* Main grid */}
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8 lg:py-20">
@@ -196,4 +196,5 @@ export function SiteFooter() {
     </footer>
   );
 }
+
 

@@ -16,6 +16,7 @@ import {
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import { ServiceCard } from "@/components/services/serviceCard";
+import { PageHeroVisual } from "@/components/layout/PageHeroVisual";
 
 export const metadata: Metadata = {
   title: "Services | RSK Technologies Group",
@@ -152,7 +153,8 @@ export default function ServicesPage() {
           <div className="absolute -right-16 top-20 h-64 w-64 rounded-full bg-[rgb(51,51,153)]/12 blur-3xl" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.10),transparent_55%)]" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.86fr] lg:items-center lg:px-10">
+          <div>
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Star size={14} /> <span>What we offer</span>
@@ -190,11 +192,13 @@ export default function ServicesPage() {
               ))}
             </div>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="services" />
         </div>
       </section>
 
       {/* Services grid */}
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={0.05 * i}>
@@ -214,7 +218,7 @@ export default function ServicesPage() {
 
       {/* Process â€” server-rendered, icons used directly (no Client boundary) */}
       <section className="border-t border-[rgb(51,51,153)]/10 bg-white/30 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Layers size={14} /> <span>How we work</span>
@@ -255,7 +259,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="border-t border-[rgb(51,51,153)]/10">
-        <div className="relative isolate mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative isolate mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="relative rounded-2xl border border-[rgb(51,51,153)]/15 bg-white/60 px-8 py-14 text-center shadow-xl backdrop-blur-md sm:px-16">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[rgb(51,51,153)]/6 via-transparent to-transparent" />
@@ -288,9 +292,15 @@ export default function ServicesPage() {
               </div>
             </div>
           </Reveal>
+          </div>
+          <PageHeroVisual variant="services" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
+
 
