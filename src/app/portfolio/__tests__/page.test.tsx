@@ -12,10 +12,14 @@ jest.mock('next/link', () => ({
 // Mock next/image
 jest.mock('next/image', () => ({
   __esModule: true,
-  // eslint-disable-next-line @next/next/no-img-element
-  default: ({ fill, priority, alt, ...props }: Record<string, unknown>) => (
-    <img {...props} alt={String(alt ?? '')} />
-  ),
+  default: (props: Record<string, unknown>) => {
+    const { alt, ...imageProps } = props
+    delete imageProps.fill
+    delete imageProps.priority
+
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img {...imageProps} alt={String(alt ?? '')} />
+  },
 }))
 
 // Mock framer-motion
