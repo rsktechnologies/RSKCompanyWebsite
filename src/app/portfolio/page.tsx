@@ -49,7 +49,8 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.10),transparent_55%)]" />
         </div>
 
-        <div className="relative mx-auto max-w-[1600px] px-5 py-20 sm:px-8 sm:py-28 lg:px-10">
+        <div className="relative mx-auto grid max-w-[1600px] gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1fr_0.86fr] lg:items-center lg:px-10">
+          <div>
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/70 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <ExternalLink size={14} />
@@ -189,6 +190,7 @@ export default function PortfolioPage() {
     </div>
   );
 }
+
 
 
 

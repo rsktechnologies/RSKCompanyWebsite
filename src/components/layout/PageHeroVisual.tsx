@@ -9,7 +9,7 @@ import {
   Scale,
   ShieldCheck,
   Sparkles,
-  Users,
+  Cpu,
 } from "lucide-react";
 
 type HeroVariant = "about" | "services" | "portfolio" | "contact" | "legal";
@@ -20,12 +20,12 @@ type PageHeroVisualProps = {
 
 const content = {
   about: {
-    label: "Senior team",
-    title: "People who plan, build, and ship",
-    mainImage: "/team/Dr.png",
-    secondaryImages: ["/team/Fortune.png", "/team/Arthur.png", "/team/Desire.png"],
-    stat: "4 leads",
-    icon: Users,
+    label: "Tech studio",
+    title: "Strategy, systems, and clean delivery",
+    mainImage: "/services/web-development.png",
+    secondaryImages: ["/services/cloud-devops.png", "/services/cyber-security.png", "/services/ui-ux-design.png"],
+    stat: "Built to scale",
+    icon: Cpu,
   },
   services: {
     label: "Delivery stack",
@@ -36,11 +36,11 @@ const content = {
     icon: MonitorCog,
   },
   portfolio: {
-    label: "Live work",
-    title: "Real product screens",
-    mainImage: "/portfolio/lending-dashboard.jpeg",
-    secondaryImages: ["/portfolio/production-inventory.jpeg", "/portfolio/production-batch.jpeg", "/portfolio/production-reports.jpeg"],
-    stat: "Case studies",
+    label: "Product systems",
+    title: "Product APIs, dashboards, and live systems",
+    mainImage: "/portfolio/mock-api-tech.svg",
+    secondaryImages: ["/portfolio/lending-dashboard.jpeg", "/portfolio/production-inventory.jpeg", "/portfolio/production-reports.jpeg"],
+    stat: "Tech preview",
     icon: Sparkles,
   },
   contact: {
@@ -65,7 +65,7 @@ const content = {
   mainImage: string;
   secondaryImages: string[];
   stat: string;
-  icon: typeof Users;
+  icon: typeof Cpu;
 }>;
 
 export function PageHeroVisual({ variant }: PageHeroVisualProps) {
@@ -103,7 +103,7 @@ export function PageHeroVisual({ variant }: PageHeroVisualProps) {
             src={item.mainImage}
             alt={item.title}
             fill
-            className={variant === "about" || variant === "contact" || variant === "legal" ? "object-contain p-4" : "object-cover"}
+            className={variant === "about" || variant === "portfolio" || variant === "contact" || variant === "legal" ? "object-contain p-4" : "object-cover"}
             sizes="(min-width: 1024px) 380px, 80vw"
             priority={variant === "about"}
           />
