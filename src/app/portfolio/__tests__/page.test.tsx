@@ -13,7 +13,9 @@ jest.mock('next/link', () => ({
 jest.mock('next/image', () => ({
   __esModule: true,
   // eslint-disable-next-line @next/next/no-img-element
-  default: (props: Record<string, unknown>) => <img {...props} alt="" />,
+  default: ({ fill, priority, alt, ...props }: Record<string, unknown>) => (
+    <img {...props} alt={String(alt ?? '')} />
+  ),
 }))
 
 // Mock framer-motion
@@ -24,30 +26,32 @@ jest.mock('@/components/motion/Reveal', () => ({
 describe('PortfolioPage', () => {
   it('renders the portfolio page', () => {
     render(<PortfolioPage />)
-    expect(screen.getByRole('heading', { level: 1, name: /Projects that/ })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /Real systems built for businesses that need to move/i,
+      })
+    ).toBeInTheDocument()
   })
 
   it('renders project cards', () => {
     render(<PortfolioPage />)
-    expect(screen.getByText('E-Commerce Platform')).toBeInTheDocument()
-    expect(screen.getByText('Mobile Banking App')).toBeInTheDocument()
-    expect(screen.getByText('SaaS Dashboard')).toBeInTheDocument()
-    expect(screen.getByText('Startup MVP')).toBeInTheDocument()
+    expect(screen.getByText('Money Lender Pro')).toBeInTheDocument()
+    expect(screen.getByText('RSK-Tech Production Line')).toBeInTheDocument()
   })
 
   it('renders project categories', () => {
     render(<PortfolioPage />)
-    expect(screen.getAllByText('Web Development')).toHaveLength(2)
-    expect(screen.getByText('App Development')).toBeInTheDocument()
-    expect(screen.getByText('MVP Development')).toBeInTheDocument()
+    expect(screen.getByText('Fintech App')).toBeInTheDocument()
+    expect(screen.getByText('Business System')).toBeInTheDocument()
   })
 
   it('renders technologies', () => {
     render(<PortfolioPage />)
     expect(screen.getAllByText('React')).toHaveLength(2)
     expect(screen.getByText('Next.js')).toBeInTheDocument()
-    expect(screen.getByText('Stripe')).toBeInTheDocument()
-    expect(screen.getByText('React Native')).toBeInTheDocument()
+    expect(screen.getByText('Finance Dashboard')).toBeInTheDocument()
+    expect(screen.getByText('Inventory Control')).toBeInTheDocument()
   })
 
   it('renders CTA section', () => {
@@ -58,7 +62,7 @@ describe('PortfolioPage', () => {
 
   it('renders view project links', () => {
     render(<PortfolioPage />)
-    const viewLinks = screen.getAllByText('View project')
-    expect(viewLinks).toHaveLength(4)
+    const viewLinks = screen.getAllByText('View live work')
+    expect(viewLinks).toHaveLength(2)
   })
 })
