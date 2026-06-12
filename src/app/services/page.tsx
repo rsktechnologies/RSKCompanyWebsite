@@ -292,13 +292,14 @@ export default function ServicesPage() {
               </div>
             </div>
           </Reveal>
-          </div>
-          <PageHeroVisual variant="services" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
 
 
 

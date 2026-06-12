@@ -176,8 +176,6 @@ export default function AboutPage() {
               </div>
             </div>
           </Reveal>
-          </div>
-          <PageHeroVisual variant="about" />
         </div>
       </section>
 
@@ -193,8 +191,6 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 text-sm font-semibold uppercase tracking-widest text-white/50">â€” Dr. Ronald, Founder & CEO</p>
           </Reveal>
-          </div>
-          <PageHeroVisual variant="about" />
         </div>
       </section>
 
@@ -291,13 +287,14 @@ export default function AboutPage() {
               </div>
             </div>
           </Reveal>
-          </div>
-          <PageHeroVisual variant="about" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
 
 
 

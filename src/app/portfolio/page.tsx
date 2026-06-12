@@ -184,13 +184,14 @@ export default function PortfolioPage() {
               </div>
             </div>
           </Reveal>
-          </div>
-          <PageHeroVisual variant="portfolio" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
 
 
 

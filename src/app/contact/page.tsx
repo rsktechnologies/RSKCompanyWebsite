@@ -269,13 +269,14 @@ export default function ContactPage() {
               </div>
             </div>
           </Reveal>
-          </div>
-          <PageHeroVisual variant="contact" />
         </div>
       </section>
     </div>
   );
 }
+
+
+
 
 
 
