@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Scale, ShieldCheck, Eye, FileText, Cookie, Mail, ChevronRight,
@@ -20,7 +20,7 @@ const sections = [
     content: [
       {
         heading: "Information we collect",
-        body: "We collect information you provide directly to us — such as your name, email address, and message content when you fill in our contact form. We may also collect certain technical information automatically, including your IP address, browser type, and pages visited, to help us improve our service.",
+        body: "We collect information you provide directly to us â€” such as your name, email address, and message content when you fill in our contact form. We may also collect certain technical information automatically, including your IP address, browser type, and pages visited, to help us improve our service.",
       },
       {
         heading: "How we use your information",
@@ -80,7 +80,7 @@ export default function LegalPage() {
           <div className="absolute -left-24 top-10 h-72 w-72 rounded-full bg-[rgb(51,51,153)]/15 blur-3xl" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.08),transparent_55%)]" />
         </div>
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Scale size={14} /> <span>Legal information</span>
@@ -118,7 +118,7 @@ export default function LegalPage() {
 
       {/* Key points strip */}
       <section className="border-y border-[rgb(51,51,153)]/10 bg-white/40 backdrop-blur-sm">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-[rgb(51,51,153)]/10 px-4 sm:px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-[rgb(51,51,153)]/10 px-4 sm:px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0 lg:px-8">
           {[
             { icon: ShieldCheck, title: "We never sell your data", body: "Your information is used only to serve you, never sold or shared with third-party advertisers." },
             { icon: Eye, title: "Transparent by default", body: "We tell you exactly what we collect, why we collect it, and how long we keep it." },
@@ -140,7 +140,7 @@ export default function LegalPage() {
       </section>
 
       {/* Policy sections */}
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-3 lg:gap-12">
 
           {/* Sticky TOC on desktop */}
@@ -234,3 +234,4 @@ export default function LegalPage() {
     </div>
   );
 }
+

@@ -1,17 +1,22 @@
-"use client";
+﻿"use client";
 
 import { Send } from "lucide-react";
 import { FormEvent, useState } from "react";
 
 const CONTACT_EMAIL = "rsktechgroup@gmail.com";
+const FORM_NAME = "rsk-contact";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-xl border border-[rgb(51,51,153)]/20 bg-white/70 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-all focus:border-[rgb(51,51,153)]/50 focus:ring-2 focus:ring-[rgb(51,51,153)]/15 disabled:opacity-60";
+  "w-full rounded-xl border border-[rgb(51,51,153)]/20 bg-white/75 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none transition-all focus:border-[rgb(51,51,153)]/50 focus:ring-2 focus:ring-[rgb(51,51,153)]/15 disabled:opacity-60";
 
 const labelClass =
   "mb-1.5 block text-xs font-semibold uppercase tracking-wider text-neutral-600";
+
+function encode(data: Record<string, string>) {
+  return new URLSearchParams(data).toString();
+}
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -26,30 +31,24 @@ export function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const name      = String(data.get("name")      ?? "").trim();
-    const email     = String(data.get("email")     ?? "").trim();
-    const company   = String(data.get("company")   ?? "").trim();
-    const service   = String(data.get("service")   ?? "").trim();
-    const message   = String(data.get("message")   ?? "").trim();
-
-    const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT;
+    const payload = {
+      "form-name": FORM_NAME,
+      name: String(data.get("name") ?? "").trim(),
+      email: String(data.get("email") ?? "").trim(),
+      company: String(data.get("company") ?? "").trim(),
+      service: String(data.get("service") ?? "").trim(),
+      message: String(data.get("message") ?? "").trim(),
+      botField: String(data.get("botField") ?? ""),
+    };
 
     try {
-      if (endpoint) {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: data,
-        });
-        if (!res.ok) throw new Error("Server error");
-      } else {
-        // Fallback: open mail client
-        const subject = encodeURIComponent(`Contact from ${name}`);
-        const body = encodeURIComponent(
-          `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nService: ${service}\n\n${message}`
-        );
-        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-      }
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(payload),
+      });
+
+      if (!res.ok) throw new Error("Form submission failed");
 
       setStatus("success");
       form.reset();
@@ -62,9 +61,21 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form
+      name={FORM_NAME}
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="botField"
+      onSubmit={handleSubmit}
+      className="space-y-5"
+    >
+      <input type="hidden" name="form-name" value={FORM_NAME} />
+      <p className="hidden">
+        <label>
+          Do not fill this out: <input name="botField" />
+        </label>
+      </p>
 
-      {/* Full name */}
       <div>
         <label htmlFor="name" className={labelClass}>Full name</label>
         <input
@@ -78,7 +89,6 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Email */}
       <div>
         <label htmlFor="email" className={labelClass}>Email address</label>
         <input
@@ -92,7 +102,6 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Company */}
       <div>
         <label htmlFor="company" className={labelClass}>Company / Organisation</label>
         <input
@@ -105,7 +114,6 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Service */}
       <div>
         <label htmlFor="service" className={labelClass}>What are you looking for?</label>
         <select
@@ -114,7 +122,7 @@ export function ContactForm() {
           disabled={isSubmitting}
           className={inputClass}
         >
-          <option value="">Select a service…</option>
+          <option value="">Select a service...</option>
           <option>Web Development</option>
           <option>App Development</option>
           <option>MVP / Startup Acceleration</option>
@@ -125,7 +133,6 @@ export function ContactForm() {
         </select>
       </div>
 
-      {/* Message */}
       <div>
         <label htmlFor="message" className={labelClass}>How can we help</label>
         <textarea
@@ -134,34 +141,29 @@ export function ContactForm() {
           rows={5}
           required
           disabled={isSubmitting}
-          placeholder="Tell us about your project, timeline, and budget if you have one in mind…"
+          placeholder="Tell us about your project, timeline, and budget if you have one in mind..."
           className={`${inputClass} resize-none`}
         />
       </div>
 
-      {/* Submit */}
       <button
         type="submit"
         disabled={isSubmitting}
         className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[rgb(51,51,153)] text-sm font-semibold text-white shadow-[0_18px_45px_-22px_rgba(51,51,153,0.95)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[rgb(41,41,128)] hover:shadow-[0_22px_55px_-24px_rgba(51,51,153,1)] disabled:translate-y-0 disabled:opacity-60 sm:w-auto sm:px-8"
       >
         <Send size={15} />
-        {isSubmitting ? "Sending…" : "Send message"}
+        {isSubmitting ? "Sending..." : "Send message"}
       </button>
 
-      {/* Success */}
       {status === "success" && (
         <p
           role="status"
           className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800"
         >
-          {process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT
-            ? "Thanks — your message was sent. We'll reply within 24 hours."
-            : "Thanks — your email app should open with your message ready to send."}
+          Thanks. Your message was sent to RSK Technologies Group.
         </p>
       )}
 
-      {/* Error */}
       {status === "error" && (
         <p role="alert" className="text-sm text-red-600">
           {errorMessage}

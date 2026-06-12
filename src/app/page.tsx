@@ -1,4 +1,4 @@
-import { HomeHero } from "@/components/home/HomeHero";
+﻿import { HomeHero } from "@/components/home/HomeHero";
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
@@ -9,7 +9,7 @@ export default function HomePage() {
       <HomeHero />
 
       <section className="border-t border-[rgb(51,51,153)]/10 bg-white/40 py-16 backdrop-blur-sm sm:py-20">
-        <div className="mx-auto max-w-6xl space-y-10 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl space-y-10 px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 sm:text-3xl">
               Why teams choose {siteConfig.name}
@@ -19,7 +19,7 @@ export default function HomePage() {
             {[
               {
                 title: "Clarity first",
-                body: "We translate fuzzy goals into a plan you can defend—milestones, risks, and tradeoffs included.",
+                body: "We translate fuzzy goals into a plan you can defendâ€”milestones, risks, and tradeoffs included.",
               },
               {
                 title: "Modern stack",
@@ -57,3 +57,4 @@ export default function HomePage() {
     </>
   );
 }
+

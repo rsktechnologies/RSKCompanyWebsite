@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+﻿/* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: `Technology services offered by ${siteConfig.name}.`,
 };
 
-// ✅ iconName is a plain string — safe to pass from Server → Client Component
+// âœ… iconName is a plain string â€” safe to pass from Server â†’ Client Component
 const services = [
   {
     iconName: "Code2" as const,
@@ -42,7 +42,7 @@ const services = [
     iconName: "Smartphone" as const,
     title: "App Development",
     description:
-      "Native and cross-platform mobile experiences that users love — built for iOS, Android, and everything in between.",
+      "Native and cross-platform mobile experiences that users love â€” built for iOS, Android, and everything in between.",
     features: ["React Native", "Flutter", "iOS Swift", "Android Kotlin"],
     tag: "#Mobile",
     image: "/services/app-development.png",
@@ -105,7 +105,7 @@ const services = [
   },
 ];
 
-// Process section still renders on the server — icons used directly here (no Client boundary crossed)
+// Process section still renders on the server â€” icons used directly here (no Client boundary crossed)
 const process = [
   {
     step: "01",
@@ -152,7 +152,7 @@ export default function ServicesPage() {
           <div className="absolute -right-16 top-20 h-64 w-64 rounded-full bg-[rgb(51,51,153)]/12 blur-3xl" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,51,153,0.10),transparent_55%)]" />
         </div>
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Star size={14} /> <span>What we offer</span>
@@ -167,7 +167,7 @@ export default function ServicesPage() {
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl">
               From web development to mobile apps, cloud infrastructure, and
-              security — we build digital solutions that help businesses scale,
+              security â€” we build digital solutions that help businesses scale,
               innovate, and compete.
             </p>
           </Reveal>
@@ -194,11 +194,11 @@ export default function ServicesPage() {
       </section>
 
       {/* Services grid */}
-      <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={0.05 * i}>
-              {/* ✅ Only plain serializable props: iconName (string), title, description, features, tag, image */}
+              {/* âœ… Only plain serializable props: iconName (string), title, description, features, tag, image */}
               <ServiceCard
                 iconName={service.iconName}
                 title={service.title}
@@ -212,9 +212,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Process — server-rendered, icons used directly (no Client boundary) */}
+      {/* Process â€” server-rendered, icons used directly (no Client boundary) */}
       <section className="border-t border-[rgb(51,51,153)]/10 bg-white/30 backdrop-blur-sm">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="inline-flex items-center gap-2 rounded-full border border-[rgb(51,51,153)]/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-[rgb(51,51,153)] shadow-sm backdrop-blur">
               <Layers size={14} /> <span>How we work</span>
@@ -223,7 +223,7 @@ export default function ServicesPage() {
               A process designed for results.
             </h2>
             <p className="mt-3 max-w-xl text-base text-neutral-600">
-              Every engagement follows the same proven playbook — so you always
+              Every engagement follows the same proven playbook â€” so you always
               know what happens next.
             </p>
           </Reveal>
@@ -255,7 +255,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="border-t border-[rgb(51,51,153)]/10">
-        <div className="relative isolate mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+        <div className="relative isolate mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
             <div className="relative rounded-2xl border border-[rgb(51,51,153)]/15 bg-white/60 px-8 py-14 text-center shadow-xl backdrop-blur-md sm:px-16">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[rgb(51,51,153)]/6 via-transparent to-transparent" />
@@ -293,3 +293,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

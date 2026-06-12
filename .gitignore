@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local video files should be hosted externally, not committed
+*.mp4
+public/videos/
+

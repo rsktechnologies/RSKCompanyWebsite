@@ -1,8 +1,8 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   name: "RSK TECHNOLOGIES GROUP",
   tagline: "Technology solutions tailored to your business needs.",
   description:
-    "We design, build, and operate modern digital products — websites, apps, AI systems, and automation tools — that empower businesses to operate smarter, scale faster, and achieve measurable growth.",
+    "We design, build, and operate modern digital products - websites, apps, AI systems, and automation tools - that empower businesses to operate smarter, scale faster, and achieve measurable growth.",
   primaryCta: {
     label: "Book a discovery call",
     href: "/contact",

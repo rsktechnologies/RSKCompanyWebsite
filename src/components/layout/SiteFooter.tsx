@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import React from "react";
@@ -72,17 +72,17 @@ const renderSocialIcon = (icon: string | React.ElementType) => {
 export function SiteFooter() {
   return (
     /*
-      Footer background: rgb(18, 18, 60) — a very dark indigo that is the natural
+      Footer background: rgb(18, 18, 60) â€” a very dark indigo that is the natural
       "shadow" of the brand blue rgb(51,51,153). It blends seamlessly with the brand
       palette rather than clashing. Text contrast is excellent against this deep indigo.
       Icons use a mid-indigo rgb(130,130,210) so they're visible but still on-brand.
     */
     <footer className="relative mt-auto text-white" style={{ backgroundColor: "rgb(14, 14, 50)" }}>
 
-      {/* Top accent — brand blue glow line */}
+      {/* Top accent â€” brand blue glow line */}
       <div className="h-px bg-gradient-to-r from-transparent via-[rgb(51,51,153)] to-transparent opacity-80" />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Main grid */}
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8 lg:py-20">
@@ -173,7 +173,7 @@ export function SiteFooter() {
             {/* Location tag */}
             <div className="mt-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs ring-1 ring-[rgb(51,51,153)]/35" style={{ backgroundColor: "rgba(51,51,153,0.2)", color: "rgb(160,160,220)" }}>
               <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "rgb(100,100,200)" }} />
-              {siteConfig.name} · Kampala, Uganda
+              {siteConfig.name} Â· Kampala, Uganda
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ export function SiteFooter() {
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-3 border-t py-6 sm:flex-row" style={{ borderColor: "rgba(51,51,153,0.25)" }}>
           <p className="text-xs" style={{ color: "rgb(100,100,150)" }}>
-            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            Â© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="/legal" className="text-xs transition-colors hover:text-indigo-200" style={{ color: "rgb(100,100,150)" }}>
@@ -196,3 +196,4 @@ export function SiteFooter() {
     </footer>
   );
 }
+
