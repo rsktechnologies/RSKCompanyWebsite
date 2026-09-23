@@ -37,6 +37,26 @@ const projects = [
     liveLink: "https://rsktech.net/",
     category: "Business System",
   },
+  {
+    title: "DentPro",
+    description:
+      "A focused dental clinic management system for organizing patients, appointments, treatment records, billing, and day-to-day clinic operations in one dependable workspace.",
+    image: "/portfolio/dentpro1.png",
+    gallery: ["/portfolio/dentpro2.png"],
+    technologies: ["Clinic Management", "Patient Records", "Appointments", "Billing"],
+    liveLink: "https://rsktech.org",
+    category: "Healthcare System",
+  },
+  {
+    title: "RSK School Management System",
+    description:
+      "A connected school operations platform for managing students, staff, classes, attendance, academic records, communication, and the workflows that keep a school moving.",
+    image: "/portfolio/school1.png",
+    gallery: ["/portfolio/school2.png"],
+    technologies: ["School Operations", "Student Records", "Attendance", "Reporting"],
+    liveLink: "https://rsktech.tech",
+    category: "Education System",
+  },
 ];
 
 export default function PortfolioPage() {

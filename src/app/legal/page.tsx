@@ -21,7 +21,7 @@ const sections = [
     content: [
       {
         heading: "Information we collect",
-        body: "We collect information you provide directly to us â€” such as your name, email address, and message content when you fill in our contact form. We may also collect certain technical information automatically, including your IP address, browser type, and pages visited, to help us improve our service.",
+        body: "We collect information you provide directly to us - such as your name, email address, and message content when you fill in our contact form. We may also collect certain technical information automatically, including your IP address, browser type, and pages visited, to help us improve our service.",
       },
       {
         heading: "How we use your information",

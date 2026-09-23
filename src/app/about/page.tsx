@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { siteConfig } from "@/config/site";
-import { TeamCard } from "@/components/team/TeamCard"; // â† adjust path to wherever you place TeamCard.tsx
+import { TeamCard } from "@/components/team/TeamCard";
 import { PageHeroVisual } from "@/components/layout/PageHeroVisual";
 
 export const metadata: Metadata = {
@@ -24,9 +24,9 @@ const stats = [
 
 const values = [
   { icon: Target, title: "Clarity over complexity", body: "We strip away noise so your users experience only what matters. No over-engineering, no hidden agendas." },
-  { icon: Zap, title: "Velocity with intention", body: "Speed without direction is chaos. We move fast because we plan well â€” not instead of planning well." },
+  { icon: Zap, title: "Velocity with intention", body: "Speed without direction is chaos. We move fast because we plan well - not instead of planning well." },
   { icon: Shield, title: "Radical ownership", body: "We treat your product like it's ours. Speaking up early, iterating relentlessly, never hiding behind a ticket." },
-  { icon: TrendingUp, title: "Long-term thinking", body: "Every line of code is written with the team that inherits it in mind â€” including yours." },
+  { icon: TrendingUp, title: "Long-term thinking", body: "Every line of code is written with the team that inherits it in mind - including yours." },
 ];
 
 const culturalPrinciples = [
@@ -39,7 +39,7 @@ const team = [
   {
     name: "Dr. Ronald",
     role: "Founder & CEO",
-    bio: "With 15+ years spanning technology, biology, dental surgery, and business systems, Ronald bridges disciplines to build digital products that scale. His leadership combines deep technical expertise with strategic vision â€” and he's as passionate about rugby as he is about great software.",
+    bio: "With 15+ years spanning technology, biology, dental surgery, and business systems, Ronald bridges disciplines to build digital products that scale. His leadership combines deep technical expertise with strategic vision - and he's as passionate about rugby as he is about great software.",
     initials: "DR",
     image: "/team/Dr.png",
   },
@@ -94,7 +94,7 @@ export default function AboutPage() {
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl">
               Founded in Uganda, RSK Technologies Group-SMC LTD was born out of a simple but powerful idea: businesses deserve smarter, faster, and more reliable digital solutions. We saw how organizations struggled to harness modern technology, and we set out to change that.
               <br /><br />
-              From our early days building websites and apps, we've expanded into AI systems, automation tools, and digital campaigns â€” helping companies streamline operations, amplify their online presence, and unlock new opportunities. What started as a local initiative has grown into a bold vision: to become a trusted technology partner across Africa and beyond.
+              From our early days building websites and apps, we've expanded into AI systems, automation tools, and digital campaigns - helping companies streamline operations, amplify their online presence, and unlock new opportunities. What started as a local initiative has grown into a bold vision: to become a trusted technology partner across Africa and beyond.
             </p>
           </Reveal>
           <Reveal delay={0.18}>
@@ -135,16 +135,16 @@ export default function AboutPage() {
               <Target size={14} /> <span>Our mission</span>
             </div>
             <h2 className="mt-4 text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">
-              To design and deliver intelligent digital solutions â€” websites, apps, AI systems, and automation tools â€” that empower businesses to operate smarter, scale faster, and achieve measurable growth.
+              To design and deliver intelligent digital solutions - websites, apps, AI systems, and automation tools - that empower businesses to operate smarter, scale faster, and achieve measurable growth.
             </h2>
             <p className="mt-5 text-pretty text-base leading-relaxed text-neutral-700 sm:text-lg">
-              {siteConfig.name} is a technology consultancy focused on bridging the gap between industry needs and cutting-edge solutions. We integrate seasoned professionals into real-world projects â€” a thriving community of innovators driving meaningful impact through technology.
+              {siteConfig.name} is a technology consultancy focused on bridging the gap between industry needs and cutting-edge solutions. We integrate seasoned professionals into real-world projects - a thriving community of innovators driving meaningful impact through technology.
             </p>
             <p className="mt-4 text-pretty text-base leading-relaxed text-neutral-700">
               At the core of everything we do are the values that guide our mission and shape our approach. Our model is deliberately senior-heavy: the people who scope your work are the people who build it.
             </p>
             <div className="mt-6 space-y-3">
-              {["Senior-led â€” no junior handoffs after the sales call", "Weekly demos â€” no black-box development", "Clean, documented, production-ready code"].map((item) => (
+              {["Senior-led - no junior handoffs after the sales call", "Weekly demos - no black-box development", "Clean, documented, production-ready code"].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 shrink-0 text-[rgb(51,51,153)]" strokeWidth={1.5} />
                   <span className="text-sm text-neutral-700">{item}</span>
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <div className="relative space-y-7">
                 {[
                   { icon: MessageSquare, num: "01", title: "Discovery & Alignment", body: "We understand your goals before writing a single line." },
-                  { icon: Zap, num: "02", title: "Rapid Iteration", body: "Focused sprints with weekly demos â€” no surprises." },
+                  { icon: Zap, num: "02", title: "Rapid Iteration", body: "Focused sprints with weekly demos - no surprises." },
                   { icon: Shield, num: "03", title: "Production-Ready Handoff", body: "Code your team can own, deploy, and scale." },
                 ].map(({ icon: Icon, num, title, body }) => (
                   <div key={num} className="flex items-start gap-4">
@@ -187,9 +187,9 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
           <Reveal>
             <p className="text-xl font-medium italic leading-relaxed text-white/90 sm:text-2xl lg:text-3xl">
-              "Our mission is to empower the next generation of tech innovators â€” and ensure every team we partner with succeeds."
+              "Our mission is to empower the next generation of tech innovators - and ensure every team we partner with succeeds."
             </p>
-            <p className="mt-4 text-sm font-semibold uppercase tracking-widest text-white/50">â€” Dr. Ronald, Founder & CEO</p>
+            <p className="mt-4 text-sm font-semibold uppercase tracking-widest text-white/50">- Dr. Ronald, Founder & CEO</p>
           </Reveal>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function AboutPage() {
               <Lightbulb size={14} /> <span>Our values</span>
             </div>
             <h2 className="mt-4 max-w-xl text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">Principles we actually work by.</h2>
-            <p className="mt-3 max-w-xl text-base text-neutral-600">Fun is in our DNA â€” and our values make it meaningful.</p>
+              <p className="mt-3 max-w-xl text-base text-neutral-600">Fun is in our DNA - and our values make it meaningful.</p>
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v, i) => (
@@ -249,12 +249,12 @@ export default function AboutPage() {
               <Users size={14} /> <span>The team</span>
             </div>
             <h2 className="mt-4 max-w-xl text-balance text-3xl font-semibold leading-snug tracking-tight text-neutral-900 sm:text-4xl">Meet the people behind the work.</h2>
-            <p className="mt-3 max-w-xl text-base text-neutral-600">No account managers, no handoffs â€” just the senior engineers who build your product, in the room when it matters.</p>
+              <p className="mt-3 max-w-xl text-base text-neutral-600">No account managers, no handoffs - just the senior engineers who build your product, in the room when it matters.</p>
           </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member, i) => (
               <Reveal key={member.name} delay={0.07 * i}>
-                {/* TeamCard is a Client Component â€” safe to use onError / useState here */}
+                {/* TeamCard is a Client Component and can use onError / useState here */}
                 <TeamCard {...member} />
               </Reveal>
             ))}
@@ -274,7 +274,7 @@ export default function AboutPage() {
               <div className="relative">
                 <h2 className="text-balance text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">Ready to build something that lasts?</h2>
                 <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-neutral-700 sm:text-lg">
-                  Tell us what you're working on. We'll tell you honestly whether we're the right fit â€” and if we are, we'll hit the ground running.
+                  Tell us what you're working on. We'll tell you honestly whether we're the right fit - and if we are, we'll hit the ground running.
                 </p>
                 <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
                   <Link href="/contact" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[rgb(51,51,153)] px-7 text-sm font-semibold text-white shadow-[0_18px_45px_-22px_rgba(51,51,153,0.95)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[rgb(41,41,128)]">

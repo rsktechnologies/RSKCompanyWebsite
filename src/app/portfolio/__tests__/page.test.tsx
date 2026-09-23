@@ -42,12 +42,16 @@ describe('PortfolioPage', () => {
     render(<PortfolioPage />)
     expect(screen.getByText('Money Lender Pro')).toBeInTheDocument()
     expect(screen.getByText('RSK-Tech Production Line')).toBeInTheDocument()
+    expect(screen.getByText('DentPro')).toBeInTheDocument()
+    expect(screen.getByText('RSK School Management System')).toBeInTheDocument()
   })
 
   it('renders project categories', () => {
     render(<PortfolioPage />)
     expect(screen.getByText('Fintech App')).toBeInTheDocument()
     expect(screen.getByText('Business System')).toBeInTheDocument()
+    expect(screen.getByText('Healthcare System')).toBeInTheDocument()
+    expect(screen.getByText('Education System')).toBeInTheDocument()
   })
 
   it('renders technologies', () => {
@@ -67,6 +71,9 @@ describe('PortfolioPage', () => {
   it('renders view project links', () => {
     render(<PortfolioPage />)
     const viewLinks = screen.getAllByText('View live work')
-    expect(viewLinks).toHaveLength(2)
+    expect(viewLinks).toHaveLength(4)
+    expect(screen.getAllByRole('link', { name: /View live work/i }).map((link) => link.getAttribute('href'))).toEqual(
+      expect.arrayContaining(['https://rsktech.org', 'https://rsktech.tech'])
+    )
   })
 })

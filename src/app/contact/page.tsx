@@ -61,9 +61,9 @@ const contactCards = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+256 762 536 576",
-    href: "tel:+256762536576",
-    sub: "Mon â€“ Fri, 8 am â€“ 6 pm EAT",
+    value: "0702189990",
+    href: "tel:0702189990",
+    sub: "Monday - Friday, 8 am - 6 pm EAT",
   },
   {
     icon: MapPin,
@@ -99,7 +99,7 @@ const social = [
   },
   {
     label: "WhatsApp",
-    href: "https://wa.me/256762536576",
+    href: "https://wa.me/256702189990",
     iconKey: "whatsapp",
   },
 ];
@@ -148,7 +148,7 @@ export default function ContactPage() {
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl">
               Tell us what you're building. We'll tell you honestly whether
-              we're the right fit â€” and if we are, we'll get started fast.
+              we're the right fit - and if we are, we'll get started fast.
             </p>
           </Reveal>
           </div>
@@ -187,7 +187,7 @@ export default function ContactPage() {
       {/* Form + sidebar */}
       <section className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
-          {/* Form â€” 2/3 width â€” uses ContactForm client component */}
+          {/* Form - 2/3 width - uses ContactForm client component */}
           <Reveal className="lg:col-span-2">
             <div className="relative rounded-2xl border border-[rgb(51,51,153)]/15 bg-white/60 p-8 shadow-[0_30px_80px_-40px_rgba(51,51,153,0.35)] backdrop-blur-md sm:p-10">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[rgb(51,51,153)]/4 via-transparent to-transparent pointer-events-none" />
@@ -205,7 +205,7 @@ export default function ContactPage() {
             </div>
           </Reveal>
 
-          {/* Sidebar â€” 1/3 */}
+          {/* Sidebar - 1/3 */}
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-6">
               {/* Follow us */}
@@ -245,7 +245,7 @@ export default function ContactPage() {
                   Kampala, Uganda
                 </p>
                 <p className="text-xs text-neutral-500">
-                  East Africa â€” serving clients worldwide
+                  East Africa - serving clients worldwide
                 </p>
               </div>
 

@@ -19,7 +19,7 @@ export default function HomePage() {
             {[
               {
                 title: "Clarity first",
-                body: "We translate fuzzy goals into a plan you can defendâ€”milestones, risks, and tradeoffs included.",
+                body: "We translate fuzzy goals into a plan you can defend - milestones, risks, and tradeoffs included.",
               },
               {
                 title: "Modern stack",

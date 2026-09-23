@@ -38,12 +38,12 @@ const social = [
   { label: "GitHub", href: "https://github.com/rsktechnologies", icon: "github" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/rsk-technologies-group", icon: "linkedin" },
   { label: "Instagram", href: "https://www.instagram.com/rsktech_group1", icon: "instagram" },
-  { label: "WhatsApp", href: "https://wa.me/256762536576", icon: MessageCircle },
+  { label: "WhatsApp", href: "https://wa.me/256702189990", icon: MessageCircle },
 ];
 
 const contact = [
   { icon: Mail, text: "rsktechgroup@gmail.com", href: "mailto:rsktechgroup@gmail.com" },
-  { icon: Phone, text: "+256 762 536 576", href: "tel:+256762536576" },
+  { icon: Phone, text: "0702189990", href: "tel:0702189990" },
   { icon: MapPin, text: "Kampala, Uganda", href: "#" },
 ];
 
@@ -72,14 +72,14 @@ const renderSocialIcon = (icon: string | React.ElementType) => {
 export function SiteFooter() {
   return (
     /*
-      Footer background: rgb(18, 18, 60) â€” a very dark indigo that is the natural
+      Footer background: rgb(18, 18, 60) - a very dark indigo that is the natural
       "shadow" of the brand blue rgb(51,51,153). It blends seamlessly with the brand
       palette rather than clashing. Text contrast is excellent against this deep indigo.
       Icons use a mid-indigo rgb(130,130,210) so they're visible but still on-brand.
     */
     <footer className="relative mt-auto text-white" style={{ backgroundColor: "rgb(14, 14, 50)" }}>
 
-      {/* Top accent â€” brand blue glow line */}
+      {/* Top accent - brand blue glow line */}
       <div className="h-px bg-gradient-to-r from-transparent via-[rgb(51,51,153)] to-transparent opacity-80" />
 
       <div className="mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8">
@@ -173,7 +173,7 @@ export function SiteFooter() {
             {/* Location tag */}
             <div className="mt-5 inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs ring-1 ring-[rgb(51,51,153)]/35" style={{ backgroundColor: "rgba(51,51,153,0.2)", color: "rgb(160,160,220)" }}>
               <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "rgb(100,100,200)" }} />
-              {siteConfig.name} Â· Kampala, Uganda
+              {siteConfig.name} - Kampala, Uganda
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@ export function SiteFooter() {
         {/* Bottom bar */}
         <div className="flex flex-col items-center justify-between gap-3 border-t py-6 sm:flex-row" style={{ borderColor: "rgba(51,51,153,0.25)" }}>
           <p className="text-xs" style={{ color: "rgb(100,100,150)" }}>
-            Â© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            Copyright {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link href="/legal" className="text-xs transition-colors hover:text-indigo-200" style={{ color: "rgb(100,100,150)" }}>

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description: `Technology services offered by ${siteConfig.name}.`,
 };
 
-// âœ… iconName is a plain string â€” safe to pass from Server â†’ Client Component
+// iconName is a plain string and safe to pass from Server to Client Component
 const services = [
   {
     iconName: "Code2" as const,
@@ -43,7 +43,7 @@ const services = [
     iconName: "Smartphone" as const,
     title: "App Development",
     description:
-      "Native and cross-platform mobile experiences that users love â€” built for iOS, Android, and everything in between.",
+      "Native and cross-platform mobile experiences that users love - built for iOS, Android, and everything in between.",
     features: ["React Native", "Flutter", "iOS Swift", "Android Kotlin"],
     tag: "#Mobile",
     image: "/services/app-development.png",
@@ -106,7 +106,7 @@ const services = [
   },
 ];
 
-// Process section still renders on the server â€” icons used directly here (no Client boundary crossed)
+// Process section still renders on the server; icons are used directly here.
 const process = [
   {
     step: "01",
@@ -169,7 +169,7 @@ export default function ServicesPage() {
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-700 sm:text-xl">
               From web development to mobile apps, cloud infrastructure, and
-              security â€” we build digital solutions that help businesses scale,
+              security - we build digital solutions that help businesses scale,
               innovate, and compete.
             </p>
           </Reveal>
@@ -202,7 +202,7 @@ export default function ServicesPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={0.05 * i}>
-              {/* âœ… Only plain serializable props: iconName (string), title, description, features, tag, image */}
+              {/* Only plain serializable props are passed to the client component. */}
               <ServiceCard
                 iconName={service.iconName}
                 title={service.title}
@@ -216,7 +216,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Process â€” server-rendered, icons used directly (no Client boundary) */}
+      {/* Process - server-rendered with icons used directly. */}
       <section className="border-t border-[rgb(51,51,153)]/10 bg-white/30 backdrop-blur-sm">
         <div className="mx-auto max-w-[1600px] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <Reveal>
@@ -227,7 +227,7 @@ export default function ServicesPage() {
               A process designed for results.
             </h2>
             <p className="mt-3 max-w-xl text-base text-neutral-600">
-              Every engagement follows the same proven playbook â€” so you always
+              Every engagement follows the same proven playbook - so you always
               know what happens next.
             </p>
           </Reveal>
