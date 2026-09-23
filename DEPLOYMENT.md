@@ -4,7 +4,7 @@ This site is a **static Next.js export** deployed to **AWS S3 + CloudFront**. Pu
 
 **Domain:** [rsktech.net](https://rsktech.net) (Namecheap)  
 **AWS account:** `rskssesanga` (`229378727305`)  
-**IAM user:** `arthur` (use access keys for GitHub Actions, not your console password)
+**Deployment credentials:** AWS root access keys (use access keys for GitHub Actions, not your console password)
 
 ---
 
@@ -78,11 +78,11 @@ CloudFront custom domains need a certificate in **N. Virginia (`us-east-1`)**, n
 
 ### 5. IAM — deploy permissions for GitHub
 
-Your IAM user `arthur` needs programmatic access for CI:
+Your AWS account needs programmatic access for CI:
 
-1. **IAM** → Users → `arthur` → **Security credentials**
-2. Create **Access key** (use case: “Application running outside AWS”)
-3. Attach a policy allowing S3 sync + CloudFront invalidation on your buckets (see `infrastructure/terraform` or the policy in the main deployment guide)
+2. Open the account menu → **Security credentials**
+3. Under **Access keys**, create an access key for the root account
+4. Select **Command Line Interface (CLI)** or **Application running outside AWS**
 
 Store the key ID and secret securely — you will add them to GitHub, not commit them.
 
@@ -96,14 +96,15 @@ Store the key ID and secret securely — you will add them to GitHub, not commit
 | `AWS_ACCESS_KEY_ID` | From IAM user `arthur` |
 | `AWS_SECRET_ACCESS_KEY` | From IAM user `arthur` |
 | `CLOUDFRONT_DISTRIBUTION_ID` | CloudFront distribution ID |
-| `AWS_SESSION_TOKEN` | Optional; required when using temporary AWS credentials |
+| `AWS_SESSION_TOKEN` | Optional; required when the access key starts with `ASIA` |
 
-Use a current access key pair from IAM user `arthur`. Do not paste the key ID,
-secret, or session token with quotes or extra spaces. If the key was created as
-temporary credentials, add all three values, including `AWS_SESSION_TOKEN`.
-If the key has been revoked or expired, create a new access key and update the
-GitHub Actions secrets under **Settings -> Secrets and variables -> Actions**.
-This workflow uses repository secrets rather than GitHub environment secrets.
+Use a current permanent root access key pair. A permanent key
+usually starts with `AKIA`; it needs only the access key ID and matching secret.
+A temporary key starts with `ASIA` and needs the matching session token too. Do
+not paste any value with quotes or extra spaces. If the key has been revoked or
+expired, create a new access key and update the GitHub Actions secrets under
+**Settings -> Secrets and variables -> Actions**. This workflow uses repository
+secrets rather than GitHub environment secrets.
 
 3. Enable **Actions** on the repo
 4. Push to `main` → workflow `.github/workflows/deploy.yml` builds and deploys
