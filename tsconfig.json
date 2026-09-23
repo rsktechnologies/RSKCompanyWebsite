@@ -14,11 +14,6 @@
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "types": [
-      "jest",
-      "node",
-      "@types/testing-library__jest-dom"
-    ],
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,

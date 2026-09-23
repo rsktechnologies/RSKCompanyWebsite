@@ -96,6 +96,15 @@ Store the key ID and secret securely — you will add them to GitHub, not commit
 | `AWS_ACCESS_KEY_ID` | From IAM user `arthur` |
 | `AWS_SECRET_ACCESS_KEY` | From IAM user `arthur` |
 | `CLOUDFRONT_DISTRIBUTION_ID` | CloudFront distribution ID |
+| `AWS_SESSION_TOKEN` | Optional; required when using temporary AWS credentials |
+
+Use a current access key pair from IAM user `arthur`. Do not paste the key ID,
+secret, or session token with quotes or extra spaces. If the key was created as
+temporary credentials, add all three values, including `AWS_SESSION_TOKEN`.
+If the key has been revoked or expired, create a new access key and update the
+GitHub Actions secrets. Repository secrets must be added under **Settings ->
+Secrets and variables -> Actions**; production environment secrets can instead
+be added under **Settings -> Environments -> production**.
 
 3. Enable **Actions** on the repo
 4. Push to `main` → workflow `.github/workflows/deploy.yml` builds and deploys
